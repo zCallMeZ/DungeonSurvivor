@@ -9,11 +9,10 @@ public class PlayerHealth : MonoBehaviour
     float highDmg = 5f;
     float normalDmg = 5f;
     float lowDmg = 5f;
-
     float health = 10f;
-    float bulletDmg = 2f;
 
-    [SerializeField] private TextMeshProUGUI healthText;
+    Score score;
+    //[SerializeField] private TextMeshProUGUI healthText;
 
     private void Start()
     {
@@ -21,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private void Update()
     {
-        healthText.text = totalHealth.ToString("F0");
+        //healthText.text = totalHealth.ToString("F0");
 
         if (totalHealth <= 0f)
         {
@@ -60,14 +59,17 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.tag == "zombie1")
         {
             TakeLowDmg();
+            score.GetLowPoint();
         }
         if (collision.gameObject.tag == "zombie2")
         {
             TakeNormalDmg();
+            score.GetNormalPoint();
         }
         if (collision.gameObject.tag == "zombie3")
         {
             TakeHighDmg();
+            score.GetHighPoint();
         }
         if (collision.gameObject.tag == "health")
         {

@@ -10,8 +10,6 @@ public class PlayerController : MonoBehaviour
     Vector2 direction;
     [SerializeField] float speed;
 
-    private Vector2 rightStickInput;
-
     // [SerializeField] AudioSource music;
 
     bool onPause = false;
@@ -31,13 +29,6 @@ public class PlayerController : MonoBehaviour
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
         body.rotation = angle;
 
-        //if (rightStickInput.magnitude > 0f)
-        //{
-        //    Vector3 curRotation = Vector3.left * rightStickInput.x + Vector3.up * rightStickInput.y;
-        //    Quaternion playerRotation = Quaternion.LookRotation(curRotation, Vector3.forward);
-
-        //    body.SetRotation(playerRotation);
-        //}
     }
     void Update()
     {
@@ -52,10 +43,5 @@ public class PlayerController : MonoBehaviour
         
         direction = new Vector2(Input.GetAxisRaw("Horizontal") * speed, Input.GetAxisRaw("Vertical") * speed);
         MousePosition = Cam.ScreenToWorldPoint(Input.mousePosition);
-        //RightStick();
-    }
-    void RightStick()
-    {
-        rightStickInput = new Vector2(Input.GetAxis("RHorizontal"), Input.GetAxis("RVertical"));
     }
 }

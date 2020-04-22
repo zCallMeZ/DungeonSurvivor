@@ -4,15 +4,51 @@ using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject panelMenu;
+    [SerializeField] private GameObject panelCredits;
+    [SerializeField] private GameObject panelPause;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonDown("Pause"))
+        {
+            ActivatePanelPause();
+        }
+    }
+
+    public void ActivatePanelCredits()
+    {
+        panelCredits.gameObject.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void DesactivatePanelCredits()
+    {
+        panelCredits.gameObject.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    public void ActivatePanelPause()
+    {
+        panelPause.gameObject.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void DesactivatePanelPause()
+    {
+        panelPause.gameObject.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    public void ActivatePanelMenu()
+    {
+        panelMenu.gameObject.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void DesactivatePanelMenu()
+    {
+        panelMenu.gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
 }

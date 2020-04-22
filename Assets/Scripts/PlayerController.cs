@@ -10,38 +10,37 @@ public class PlayerController : MonoBehaviour
     Vector2 direction;
     [SerializeField] float speed;
 
-    // [SerializeField] AudioSource music;
+    //[SerializeField] AudioSource music;
 
     bool onPause = false;
 
+    // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-     //   music.Play();
+        //music.Play();
     }
 
 
+    // Update is called once per frame
+    void Update()
+    {
+        if (Time.timeScale == 0)
+        {
+            //music.Pause();
+        }
+        if (Time.timeScale != 0)
+        {
+          //  music.Play();
+        }
+        direction = new Vector2(Input.GetAxisRaw("Horizontal") * speed, Input.GetAxisRaw("Vertical") * speed);
+        MousePosition = Cam.ScreenToWorldPoint(Input.mousePosition);
+    }
     private void FixedUpdate()
-
     {
         body.velocity = new Vector2(direction.x * speed * Time.fixedDeltaTime, direction.y * speed * Time.fixedDeltaTime);
         Vector2 lookDirection = MousePosition - body.position;
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
         body.rotation = angle;
-
-    }
-    void Update()
-    {
-        //if (Time.timeScale == 0)
-        //{
-        //    music.Pause();
-        //}
-        //if (Time.timeScale != 0)
-        //{
-        //    music.Play();
-        //}
-        
-        direction = new Vector2(Input.GetAxisRaw("Horizontal") * speed, Input.GetAxisRaw("Vertical") * speed);
-        MousePosition = Cam.ScreenToWorldPoint(Input.mousePosition);
     }
 }

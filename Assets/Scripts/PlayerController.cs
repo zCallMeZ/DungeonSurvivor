@@ -4,43 +4,32 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    Rigidbody2D body;
-    [SerializeField] Camera Cam;
-    Vector2 MousePosition;
-    Vector2 direction;
-    [SerializeField] float speed;
+    Rigidbody2D rb;
+    [SerializeField] Camera cam;
 
-    //[SerializeField] AudioSource music;
+    Vector2 movement;
+    Vector2 mousePos;
 
-    bool onPause = false;
+    [SerializeField] float speed = 5f;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        body = GetComponent<Rigidbody2D>();
-        //music.Play();
+        rb = GetComponent<Rigidbody2D>();
+    }
+    private void Update()
+    {
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Time.timeScale == 0)
-        {
-            //music.Pause();
-        }
-        if (Time.timeScale != 0)
-        {
-          //  music.Play();
-        }
-        direction = new Vector2(Input.GetAxisRaw("Horizontal") * speed, Input.GetAxisRaw("Vertical") * speed);
-        MousePosition = Cam.ScreenToWorldPoint(Input.mousePosition);
-    }
     private void FixedUpdate()
     {
-        body.velocity = new Vector2(direction.x * speed * Time.fixedDeltaTime, direction.y * speed * Time.fixedDeltaTime);
-        Vector2 lookDirection = MousePosition - body.position;
-        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
-        body.rotation = angle;
+        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+
+        Vector2 lookDir = mousePos - rb.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90;
+        rb.rotation = angle;
     }
 }

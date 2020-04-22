@@ -10,10 +10,10 @@ public class MenuManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Pause"))
-        {
-            ActivatePanelPause();
-        }
+        //if (Input.GetButtonDown("Pause"))
+        //{
+        //    ActivatePanelPause();
+        //}
     }
 
     public void ActivatePanelCredits()

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Score : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class Score : MonoBehaviour
     float normalPoint = 50f;
     float lowPoint = 10f;
 
-    //[SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI scoreText;
 
     private void Start()
     {
@@ -17,7 +18,7 @@ public class Score : MonoBehaviour
     }
     private void Update()
     {
-        //scoreText.text = totalPoint.ToString("F0");
+        scoreText.text = totalPoint.ToString("F0");
     }
 
     public void GetHighPoint()

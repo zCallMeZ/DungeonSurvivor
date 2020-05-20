@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour
     float health = 10f;
 
     Score score;
-    //[SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] private TextMeshProUGUI healthText;
 
     private void Start()
     {
@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private void Update()
     {
-        //healthText.text = totalHealth.ToString("F0");
+        healthText.text = totalHealth.ToString("F0");
 
         if (totalHealth <= 0f)
         {

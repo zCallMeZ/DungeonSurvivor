@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class ZombieController : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
-
     enum State
     {
-        PATROLL,
+        PATROL,
         SEARCH,
         ATTACK,
         DEATH
     }
 
-    State state = State.PATROLL;
+    State state = State.PATROL;
+
+    void Start()
+    {
+        
+    }
 
     private void Update()
     {
         
         switch (state)
         {
-            case State.PATROLL:
+            case State.PATROL:
 
                 break;
 

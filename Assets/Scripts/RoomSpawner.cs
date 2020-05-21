@@ -30,7 +30,10 @@ public class RoomSpawner : MonoBehaviour
     }
     private void Update()
     {
-        Spawner();
+        if (canSpawn)
+        {
+            Spawner();
+        }
     }
 
     void Spawner()

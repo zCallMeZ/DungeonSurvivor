@@ -26,19 +26,11 @@ public class RoomSpawner : MonoBehaviour
 
     private void Start()
     {
-
-    }
-    private void Update()
-    {
-        if (canSpawn)
-        {
-            Spawner();
-        }
+   
     }
 
     void Spawner()
     {
-        if (canSpawn)
         {
             if (openingDirection == 0)
             {
@@ -46,15 +38,24 @@ public class RoomSpawner : MonoBehaviour
                 Debug.Log(rand);
                 if (rand == 0)
                 {
-                    Instantiate(roomB, transform.position, Quaternion.identity);
+                    if (canSpawn)
+                    { 
+                        Instantiate(roomB, transform.position, Quaternion.identity);
+                    }
                 }
                 else if (rand == 1)
                 {
-                    Instantiate(roomRB, transform.position, Quaternion.identity);
+                    if (canSpawn)
+                    { 
+                        Instantiate(roomRB, transform.position, Quaternion.identity);
+                    }
                 }
                 else if (rand == 2)
                 {
-                    Instantiate(roomTB, transform.position, Quaternion.identity);
+                    if (canSpawn)
+                    { 
+                        Instantiate(roomTB, transform.position, Quaternion.identity);
+                    }
                 }
                 canSpawn = false;
             }
@@ -64,19 +65,31 @@ public class RoomSpawner : MonoBehaviour
                 Debug.Log(rand);
                 if (rand == 0)
                 {
-                    Instantiate(roomT, transform.position, Quaternion.identity);
+                    if (canSpawn)
+                    { 
+                        Instantiate(roomT, transform.position, Quaternion.identity);
+                    }
                 }
                 else if (rand == 1)
                 {
-                    Instantiate(roomTB, transform.position, Quaternion.identity);
+                    if (canSpawn)
+                    { 
+                        Instantiate(roomTB, transform.position, Quaternion.identity);
+                    }
                 }
                 else if (rand == 2)
                 {
-                    Instantiate(roomTL, transform.position, Quaternion.identity);
+                    if (canSpawn)
+                    { 
+                        Instantiate(roomTL, transform.position, Quaternion.identity);
+                    }
                 }
                 else if (rand == 3)
                 {
-                    Instantiate(roomTR, transform.position, Quaternion.identity);
+                    if (canSpawn)
+                    { 
+                        Instantiate(roomTR, transform.position, Quaternion.identity);
+                    }
                 }
                 canSpawn = false;
 
@@ -87,15 +100,24 @@ public class RoomSpawner : MonoBehaviour
                 Debug.Log(rand);
                 if (rand == 0)
                 {
-                    Instantiate(roomL, transform.position, Quaternion.identity);
+                    if (canSpawn)
+                    { 
+                        Instantiate(roomL, transform.position, Quaternion.identity);
+                    }
                 }
                 else if (rand == 1)
                 {
-                    Instantiate(roomLR, transform.position, Quaternion.identity);
+                    if (canSpawn)
+                    { 
+                        Instantiate(roomLR, transform.position, Quaternion.identity);
+                    }
                 }
                 else if (rand == 2)
                 {
-                    Instantiate(roomTL, transform.position, Quaternion.identity);
+                    if (canSpawn)
+                    { 
+                        Instantiate(roomTL, transform.position, Quaternion.identity);
+                    }
                 }
                 canSpawn = false;
 
@@ -106,15 +128,24 @@ public class RoomSpawner : MonoBehaviour
                 Debug.Log(rand);
                 if (rand == 0)
                 {
-                    Instantiate(roomR, transform.position, Quaternion.identity);
+                    if (canSpawn) 
+                    { 
+                        Instantiate(roomR, transform.position, Quaternion.identity);
+                    }
                 }
                 else if (rand == 1)
                 {
-                    Instantiate(roomLR, transform.position, Quaternion.identity);
+                    if (canSpawn)
+                    {
+                        Instantiate(roomLR, transform.position, Quaternion.identity);
+                    }
                 }
                 else if (rand == 2)
                 {
-                    Instantiate(roomRB, transform.position, Quaternion.identity);
+                    if (canSpawn) 
+                    { 
+                        Instantiate(roomRB, transform.position, Quaternion.identity);
+                    }
                 }
                 canSpawn = false;
 
@@ -127,6 +158,13 @@ public class RoomSpawner : MonoBehaviour
         if (collision.gameObject.tag == "room")
         {
             canSpawn = false;
+        }
+    }
+    private void Update()
+    {
+        if (canSpawn)
+        {
+            Spawner();
         }
     }
 }

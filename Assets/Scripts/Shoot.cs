@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    [SerializeField] float speed = 5;
+    [SerializeField] float speed = 5; //TODO(@Bryan) This is a float, be specific and indicate that it's a float.
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform firePoint;
 
@@ -15,7 +15,7 @@ public class Shoot : MonoBehaviour
     //[SerializeField] AudioSource bulletSound;
     void Start()
     {
-        fireRate = 0.5f;
+        fireRate = 0.5f; //TODO(@Bryan) Assign the value when declaring the variable.
         nextFire = Time.time;
     }
 

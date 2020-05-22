@@ -14,32 +14,34 @@ public class ZombieController : MonoBehaviour
 
     State state = State.PATROL;
 
-    void Start()
+    void Start() //TODO(@Solange) Remove this function because it's still called on start eventhough nothing happen. 
     {
         
     }
 
     private void Update()
     {
-        
+        //TODO(@Solange) Where is the code?
         switch (state)
         {
             case State.PATROL:
-
+            
                 break;
 
             case State.SEARCH:
-
+                    
                 break;
 
             case State.ATTACK:
-
+                //Alert other zombien
+                
+                
+                //Attack Player
                 break;
 
             case State.DEATH:
                 Destroy(gameObject);
                 break;
         }
-
     }
 }

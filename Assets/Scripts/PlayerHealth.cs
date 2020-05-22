@@ -11,12 +11,18 @@ public class PlayerHealth : MonoBehaviour
     float lowDmg = 5f;
     float health = 10f;
 
+    enum DmgType {
+        HIGH,
+        NORMAL,
+        LOW
+    }
+    
     Score score;
-    [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] private TextMeshProUGUI healthText; //TODO(@Bryan) The variable score (which is private) doesn't have the modifier private, but this one does. Make a choice.
 
     private void Start()
     {
-        totalHealth = 100f;
+        totalHealth = 100f; //TODO(@Bryan) If it's a const value, then don't reassign it the start function.
     }
     private void Update()
     {
@@ -28,7 +34,8 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    void TakeHighDmg()
+    //TODO(@Bryan) Those 3 functions do exactly the same thing. You could use a unique function with a parameter. The parameter can be an enum (HIGH, NORMAL, LOW)
+    void TakeHighDmg() //TODO(@Bryan) This function is private but you don't use the modifier "private"
     {
         health -= highDmg;
     }
@@ -47,16 +54,16 @@ public class PlayerHealth : MonoBehaviour
     {
         totalHealth += health;
 
-        if (totalHealth >= 100f)
+        if (totalHealth >= 100f) //TODO(@Bryan) Magic number. You can create a const variable called MAX_HEALTH
         {
-            totalHealth = 100f;
+            totalHealth = 100f; //TODO(@Bryan) Magic number.
         }
     }
 
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "zombie1")
+        if (collision.gameObject.tag == "zombie1") //TODO(@Bryan) Use more modern function collision.gameobject.CompareTage("zombie1")
         {
             TakeLowDmg();
             score.GetLowPoint();

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Net;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -13,6 +10,17 @@ public class RoomSpawner : MonoBehaviour
     // 1 --> need top door
     // 2 --> need left door
     // 3 --> need right door
+
+    List<Vector2> spawner;
+
+    enum DirectionRoom
+    {
+        BOTTOM,
+        TOP,
+        LEFT,
+        RIGHT,
+        LENGHT
+    }
 
     [SerializeField] private GameObject roomTR;
     [SerializeField] private GameObject roomTL;
@@ -29,7 +37,12 @@ public class RoomSpawner : MonoBehaviour
     int maxRoom = 5;
 
     private void Start() //TODO(@Bryan if you're not using this function then delete it, otherwise this function is still called
-    { }
+    {
+        if (spawner.Contains(transform.position))
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Spawner()
     {
@@ -38,7 +51,7 @@ public class RoomSpawner : MonoBehaviour
             //TODO(@Bryan) Use a switch with the enum for the direction.
             if (openingDirection == 0)
             {
-                int rand = Random.Range(0, 2);
+                int rand = Random.Range(0, 3);
                 Debug.Log(rand);
                 if (rand == 0)
                 {
@@ -65,7 +78,7 @@ public class RoomSpawner : MonoBehaviour
             }
             if (openingDirection == 1)
             {
-                int rand = Random.Range(0, 3);
+                int rand = Random.Range(0, 4);
                 Debug.Log(rand);
                 if (rand == 0)
                 {
@@ -100,7 +113,7 @@ public class RoomSpawner : MonoBehaviour
             }
             if (openingDirection == 2)
             {
-                int rand = Random.Range(0, 2);
+                int rand = Random.Range(0, 3);
                 Debug.Log(rand);
                 if (rand == 0)
                 {
@@ -128,7 +141,7 @@ public class RoomSpawner : MonoBehaviour
             }
             if (openingDirection == 3)
             {
-                int rand = Random.Range(0, 2);
+                int rand = Random.Range(0, 3);
                 Debug.Log(rand);
                 if (rand == 0)
                 {
@@ -169,7 +182,7 @@ public class RoomSpawner : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "room") //TODO(@Bryan) Use modern version (cf PlayerHealth)
+        if (collision.gameObject.CompareTag ("room")) //TODO(@Bryan) Use modern version (cf PlayerHealth)
         {
             canSpawn = false;
         }

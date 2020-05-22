@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ZombieController : MonoBehaviour
 {
@@ -8,16 +6,12 @@ public class ZombieController : MonoBehaviour
     {
         PATROL,
         SEARCH,
-        ATTACK,
+        ALERT,
+        ATTACKPLAYER,
         DEATH
     }
 
     State state = State.PATROL;
-
-    void Start() //TODO(@Solange) Remove this function because it's still called on start eventhough nothing happen. 
-    {
-        
-    }
 
     private void Update()
     {
@@ -32,7 +26,11 @@ public class ZombieController : MonoBehaviour
                     
                 break;
 
-            case State.ATTACK:
+            case State.ALERT:
+
+                break;
+
+            case State.ATTACKPLAYER:
                 //Alert other zombien
                 
                 

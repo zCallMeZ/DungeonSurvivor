@@ -22,6 +22,8 @@ public class RoomSpawner : MonoBehaviour
         LENGHT
     }
 
+    DirectionRoom state = DirectionRoom.BOTTOM;
+
     [SerializeField] private GameObject roomTR;
     [SerializeField] private GameObject roomTL;
     [SerializeField] private GameObject roomTB;
@@ -47,127 +49,13 @@ public class RoomSpawner : MonoBehaviour
     void Spawner()
     {
         //TODO(@Bryan) This scope is useless
-        {
+        
             //TODO(@Bryan) Use a switch with the enum for the direction.
-            if (openingDirection == 0)
-            {
-                int rand = Random.Range(0, 3);
-                Debug.Log(rand);
-                if (rand == 0)
-                {
-                    if (canSpawn)
-                    { 
-                        Instantiate(roomB, transform.position, Quaternion.identity);
-                    }
-                }
-                else if (rand == 1)
-                {
-                    if (canSpawn)
-                    { 
-                        Instantiate(roomRB, transform.position, Quaternion.identity);
-                    }
-                }
-                else if (rand == 2) //TODO(@Bryan) You don't know how to use Random.Range. You can never have the value of 2.
-                {
-                    if (canSpawn)
-                    { 
-                        Instantiate(roomTB, transform.position, Quaternion.identity);
-                    }
-                }
-                canSpawn = false;
-            }
-            if (openingDirection == 1)
-            {
-                int rand = Random.Range(0, 4);
-                Debug.Log(rand);
-                if (rand == 0)
-                {
-                    if (canSpawn)
-                    { 
-                        Instantiate(roomT, transform.position, Quaternion.identity);
-                    }
-                }
-                else if (rand == 1)
-                {
-                    if (canSpawn)
-                    { 
-                        Instantiate(roomTB, transform.position, Quaternion.identity);
-                    }
-                }
-                else if (rand == 2)
-                {
-                    if (canSpawn)
-                    { 
-                        Instantiate(roomTL, transform.position, Quaternion.identity);
-                    }
-                }
-                else if (rand == 3) //TODO(@Bryan) You still using Random.Range in the wrong way as 3 is not a possibility with your Random.Range.
-                {
-                    if (canSpawn)
-                    { 
-                        Instantiate(roomTR, transform.position, Quaternion.identity);
-                    }
-                }
-                canSpawn = false;
-
-            }
-            if (openingDirection == 2)
-            {
-                int rand = Random.Range(0, 3);
-                Debug.Log(rand);
-                if (rand == 0)
-                {
-                    if (canSpawn)
-                    { 
-                        Instantiate(roomL, transform.position, Quaternion.identity);
-                    }
-                }
-                else if (rand == 1)
-                {
-                    if (canSpawn)
-                    { 
-                        Instantiate(roomLR, transform.position, Quaternion.identity);
-                    }
-                }
-                else if (rand == 2) //TODO(@Bryan) Still wrong.
-                {
-                    if (canSpawn)
-                    { 
-                        Instantiate(roomTL, transform.position, Quaternion.identity);
-                    }
-                }
-                canSpawn = false;
-
-            }
-            if (openingDirection == 3)
-            {
-                int rand = Random.Range(0, 3);
-                Debug.Log(rand);
-                if (rand == 0)
-                {
-                    if (canSpawn) 
-                    { 
-                        Instantiate(roomR, transform.position, Quaternion.identity);
-                    }
-                }
-                else if (rand == 1)
-                {
-                    if (canSpawn)
-                    {
-                        Instantiate(roomLR, transform.position, Quaternion.identity);
-                    }
-                }
-                else if (rand == 2) //TODO(@Bryan) Still wrong. 
-                {
-                    if (canSpawn) 
-                    { 
-                        Instantiate(roomRB, transform.position, Quaternion.identity);
-                    }
-                }
-                canSpawn = false;
-
-            }
-        }
+           
+           
+           
+           
+        
         
         //TODO(@All) A big part is missing, you don't where or which rooms have already been instanciated. You muste fix this. I see two solutions
         /*
@@ -189,9 +77,126 @@ public class RoomSpawner : MonoBehaviour
     }
     private void Update()
     {
-        if (canSpawn)
+        //if (canSpawn)
+        //{
+        //    Spawner();
+        //}
+
+        switch (state)
         {
-            Spawner();
+            case DirectionRoom.BOTTOM:
+
+                break;
+
+            case DirectionRoom.TOP:
+
+                if (openingDirection == 1)
+                {
+                    int rand = Random.Range(0, 4);
+                    Debug.Log(rand);
+                    if (rand == 0)
+                    {
+                        if (canSpawn)
+                        {
+                            Instantiate(roomT, transform.position, Quaternion.identity);
+                        }
+                    }
+                    else if (rand == 1)
+                    {
+                        if (canSpawn)
+                        {
+                            Instantiate(roomTB, transform.position, Quaternion.identity);
+                        }
+                    }
+                    else if (rand == 2)
+                    {
+                        if (canSpawn)
+                        {
+                            Instantiate(roomTL, transform.position, Quaternion.identity);
+                        }
+                    }
+                    else if (rand == 3) //TODO(@Bryan) You still using Random.Range in the wrong way as 3 is not a possibility with your Random.Range.
+                    {
+                        if (canSpawn)
+                        {
+                            Instantiate(roomTR, transform.position, Quaternion.identity);
+                        }
+                    }
+                    canSpawn = false;
+
+                }
+
+                break;
+
+            case DirectionRoom.LEFT:
+
+                if (openingDirection == 2)
+                {
+                    int rand = Random.Range(0, 3);
+                    Debug.Log(rand);
+                    if (rand == 0)
+                    {
+                        if (canSpawn)
+                        {
+                            Instantiate(roomL, transform.position, Quaternion.identity);
+                        }
+                    }
+                    else if (rand == 1)
+                    {
+                        if (canSpawn)
+                        {
+                            Instantiate(roomLR, transform.position, Quaternion.identity);
+                        }
+                    }
+                    else if (rand == 2) //TODO(@Bryan) Still wrong.
+                    {
+                        if (canSpawn)
+                        {
+                            Instantiate(roomTL, transform.position, Quaternion.identity);
+                        }
+                    }
+                    canSpawn = false;
+
+                }
+
+                break;
+
+            case DirectionRoom.RIGHT:
+
+                if (openingDirection == 3)
+                {
+                    int rand = Random.Range(0, 3);
+                    Debug.Log(rand);
+                    if (rand == 0)
+                    {
+                        if (canSpawn)
+                        {
+                            Instantiate(roomR, transform.position, Quaternion.identity);
+                        }
+                    }
+                    else if (rand == 1)
+                    {
+                        if (canSpawn)
+                        {
+                            Instantiate(roomLR, transform.position, Quaternion.identity);
+                        }
+                    }
+                    else if (rand == 2) //TODO(@Bryan) Still wrong. 
+                    {
+                        if (canSpawn)
+                        {
+                            Instantiate(roomRB, transform.position, Quaternion.identity);
+                        }
+                    }
+                    canSpawn = false;
+
+                }
+
+                break;
+
+            case DirectionRoom.LENGHT:
+
+                break;
         }
     }
 }

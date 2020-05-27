@@ -37,13 +37,14 @@ public class RoomSpawner : MonoBehaviour
     bool canSpawn = true;
     int spawnCounter = 0;
     int maxRoom = 5;
+    private static int roomNombre;
 
     private void Start() //TODO(@Bryan if you're not using this function then delete it, otherwise this function is still called
     {
-        if (spawner.Contains(transform.position))
-        {
-            Destroy(gameObject);
-        }
+//        if (spawner.Contains(transform.position))
+//        {
+//            Destroy(gameObject);
+//        }
     }
 
     void Spawner()

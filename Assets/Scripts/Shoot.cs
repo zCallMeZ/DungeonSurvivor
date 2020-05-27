@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    [SerializeField] float speed = 5; //TODO(@Bryan) This is a float, be specific and indicate that it's a float.
+    [SerializeField] float speed = 1f; //TODO(@Bryan) This is a float, be specific and indicate that it's a float.
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform firePoint;
 

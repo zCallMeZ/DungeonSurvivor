@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
             
         //TODO(@Bryan) This is on the "visual layer" this should be in the Update funciton.
         Vector2 lookDir = mousePos - rb.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90; //TODO(@Bryan) Be specific, 90 is used with float, you must also use a float.
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg; //TODO(@Bryan) Be specific, 90 is used with float, you must also use a float.
         rb.rotation = angle; //TODO(@Bryan) Don't apply rotation to rigidbody, apply it to a transform.
     }
 }

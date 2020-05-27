@@ -8,6 +8,7 @@ TagManager:
   - wall
   - room
   - ground
+  - player
   layers:
   - Default
   - TransparentFX
@@ -45,9 +46,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: ground
+    uniqueID: 982668163
+    locked: 0
   - name: wall
     uniqueID: 4215091883
     locked: 0
-  - name: ground
-    uniqueID: 982668163
+  - name: player
+    uniqueID: 420796817
     locked: 0

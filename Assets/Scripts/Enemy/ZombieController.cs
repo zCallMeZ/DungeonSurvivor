@@ -4,26 +4,21 @@ public class ZombieController : MonoBehaviour
 {
     enum State
     {
-        PATROL,
-        SEARCH,
+        WALK,
         ALERT,
         ATTACKPLAYER,
         DEATH
     }
 
-    State state = State.PATROL;
+    State state = State.WALK;
 
     private void Update()
     {
         //TODO(@Solange) Where is the code?
         switch (state)
         {
-            case State.PATROL:
+            case State.WALK:
             
-                break;
-
-            case State.SEARCH:
-                    
                 break;
 
             case State.ALERT:

@@ -18,7 +18,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - AI
   - 
   - 
   - 
@@ -54,4 +54,7 @@ TagManager:
     locked: 0
   - name: player
     uniqueID: 420796817
+    locked: 0
+  - name: AI
+    uniqueID: 113690357
     locked: 0

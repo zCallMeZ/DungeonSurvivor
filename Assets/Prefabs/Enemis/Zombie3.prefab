@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3801532523309835333}
   - component: {fileID: 5083847479513808474}
   - component: {fileID: 4875067804775020633}
+  - component: {fileID: 3147472232103157275}
   m_Layer: 8
   m_Name: Zombie3
   m_TagString: Untagged
@@ -114,3 +115,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ba069cb900b2141be00e3ff17111d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
+--- !u!58 &3147472232103157275
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105257814283819348}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.8

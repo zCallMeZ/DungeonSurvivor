@@ -4,6 +4,7 @@ public class ZombieController : MonoBehaviour
 {
     public float speed;
     private Transform target;
+    bool isFollow = false;
 
     enum State
     {
@@ -23,8 +24,11 @@ public class ZombieController : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-        
+        if(isFollow)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        }
+      
         //TODO(@Solange) Where is the code?
         switch (state)
         {
@@ -50,6 +54,14 @@ public class ZombieController : MonoBehaviour
             case State.DEATH:
                 Destroy(gameObject);
                 break;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "player")
+        {
+            isFollow = true;
         }
     }
 }

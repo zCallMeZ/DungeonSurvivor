@@ -63,22 +63,28 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "zombie1") //TODO(@Bryan) Use more modern function collision.gameobject.CompareTage("zombie1")
+        if (collision.gameObject.CompareTag ("Zombie1")) //TODO(@Bryan) Use more modern function collision.gameobject.CompareTage("zombie1")
         {
             TakeLowDmg();
             score.GetLowPoint();
+            Debug.Log("TakeLowDmg");
         }
-        if (collision.gameObject.tag == "zombie2")
+        if (collision.gameObject.CompareTag ("Zombie2"))
         {
             TakeNormalDmg();
             score.GetNormalPoint();
         }
-        if (collision.gameObject.tag == "zombie3")
+        if (collision.gameObject.CompareTag ("Zombie3"))
         {
             TakeHighDmg();
             score.GetHighPoint();
         }
-        if (collision.gameObject.tag == "health")
+        if (collision.gameObject.CompareTag("Zombie4"))
+        {
+            TakeHighDmg();
+            score.GetHighPoint();
+        }
+        if (collision.gameObject.CompareTag ("health"))
         {
             TakeHealth();
         }

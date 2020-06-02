@@ -9,6 +9,10 @@ TagManager:
   - room
   - ground
   - player
+  - Zombie1
+  - Zombie2
+  - Zombie3
+  - Zombie4
   layers:
   - Default
   - TransparentFX

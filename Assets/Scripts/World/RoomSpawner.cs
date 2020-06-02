@@ -30,11 +30,22 @@ public class RoomSpawner : MonoBehaviour
 
     void Update()
     {
-       if (canSpawn)
-       {
-           SpawningRoom();
-       }
+        if (canSpawn)
+        {
+            SpawningRoom();
+        }
     }
+
+    //IEnumerator Coroutine()
+    //{
+    //    while(canSpawn)
+    //    {
+
+    //    yield return new WaitForSeconds(1);
+
+    //    SpawningRoom();          
+    //    }
+    //}
 
     enum Direction
     {
@@ -62,24 +73,21 @@ public class RoomSpawner : MonoBehaviour
                         }
                         if (rand == 0)
                         {
-                            if (canSpawn)
-                            {
-                                Instantiate(roomB, transform.position, Quaternion.identity);
-                            }
+             
+                             Instantiate(roomB, transform.position, Quaternion.identity);
+                            
                         }
                         else if (rand == 1)
                         {
-                            if (canSpawn)
-                            {
-                                Instantiate(roomRB, transform.position, Quaternion.identity);
-                            }
+                       
+                            Instantiate(roomRB, transform.position, Quaternion.identity);
+                            
                         }
                         else if (rand == 2)
                         {
-                            if (canSpawn)
-                            {
-                                Instantiate(roomTB, transform.position, Quaternion.identity);
-                            }
+                          
+                            Instantiate(roomTB, transform.position, Quaternion.identity);
+                            
                         }
                         canSpawn = false;
                     }
@@ -98,31 +106,27 @@ public class RoomSpawner : MonoBehaviour
                     }
                     if (rand == 0)
                     {
-                        if (canSpawn)
-                        {
-                            Instantiate(roomT, transform.position, Quaternion.identity);
-                        }
+                   
+                       Instantiate(roomT, transform.position, Quaternion.identity);
+                        
                     }
                     else if (rand == 1)
                     {
-                        if (canSpawn)
-                        {
-                            Instantiate(roomTB, transform.position, Quaternion.identity);
-                        }
+
+                         Instantiate(roomTB, transform.position, Quaternion.identity);
+                        
                     }
                     else if (rand == 2)
                     {
-                        if (canSpawn)
-                        {
-                            Instantiate(roomTL, transform.position, Quaternion.identity);
-                        }
+                    
+                         Instantiate(roomTL, transform.position, Quaternion.identity);
+                        
                     }
                     else if (rand == 3)
                     {
-                        if (canSpawn)
-                        {
-                            Instantiate(roomTR, transform.position, Quaternion.identity);
-                        }
+                       
+                         Instantiate(roomTR, transform.position, Quaternion.identity);
+                        
                     }
                     canSpawn = false;
                 }
@@ -140,27 +144,23 @@ public class RoomSpawner : MonoBehaviour
                     }
                     if (rand == 0)
                     {
-                        if (canSpawn)
-                        {
-                            Instantiate(roomL, transform.position, Quaternion.identity);
-                        }
+                
+                       Instantiate(roomL, transform.position, Quaternion.identity);
+                        
                     }
                     else if (rand == 1)
                     {
-                        if (canSpawn)
-                        {
-                            Instantiate(roomLR, transform.position, Quaternion.identity);
-                        }
+                   
+                       Instantiate(roomLR, transform.position, Quaternion.identity);
+                        
                     }
                     else if (rand == 2)
                     {
-                        if (canSpawn)
-                        {
-                            Instantiate(roomTL, transform.position, Quaternion.identity);
-                        }
+
+                       Instantiate(roomTL, transform.position, Quaternion.identity);
+                        
                     }
                     canSpawn = false;
-
                 }
                 break;
             case Direction.RIGHT:
@@ -176,24 +176,19 @@ public class RoomSpawner : MonoBehaviour
                     }
                     if (rand == 0)
                     {
-                        if (canSpawn)
-                        {
-                            Instantiate(roomR, transform.position, Quaternion.identity);
-                        }
+
+                        Instantiate(roomR, transform.position, Quaternion.identity);
+                        
                     }
                     else if (rand == 1)
-                    {
-                        if (canSpawn)
-                        {
-                            Instantiate(roomLR, transform.position, Quaternion.identity);
-                        }
+                    {              
+                        Instantiate(roomLR, transform.position, Quaternion.identity); 
                     }
                     else if (rand == 2)
                     {
-                        if (canSpawn)
-                        {
-                            Instantiate(roomRB, transform.position, Quaternion.identity);
-                        }
+
+                        Instantiate(roomRB, transform.position, Quaternion.identity);
+                        
                     }
                     canSpawn = false;
                 }
@@ -219,31 +214,16 @@ public class RoomSpawner : MonoBehaviour
         }
     }
 
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        Debug.Log(collision);
-        if (collision.gameObject.CompareTag("ground"))
-        {
-            Destroy(gameObject.transform.parent);
-        }    
-    }
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        canSpawn = true;
-    }
-
-
-
-    //IEnumerator Coroutine()
+    //void OnCollisionStay2D(Collision2D collision)
     //{
-    //    while (roomIndex <= maxRoom)
+    //    Debug.Log(collision);
+    //    if (collision.gameObject.CompareTag("ground"))
     //    {
-    //        yield return new WaitForSeconds(1);
-    //        if (canSpawn)
-    //        {
-    //            Spawner();
-    //        }
-    //    }
+    //        Destroy(gameObject.transform.parent);
+    //    }    
     //}
+
+
+
 }
 

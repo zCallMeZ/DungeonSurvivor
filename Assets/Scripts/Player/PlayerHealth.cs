@@ -67,7 +67,7 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeLowDmg();
             score.GetLowPoint();
-            Debug.Log("TakeLowDmg");
+            Debug.Log(totalHealth + "LifePlayer");
         }
         if (collision.gameObject.CompareTag ("Zombie2"))
         {

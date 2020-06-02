@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4217525110124469996}
   - component: {fileID: 8158208871569571688}
-  m_Layer: 0
+  - component: {fileID: 4551445233757113495}
+  m_Layer: 10
   m_Name: tiles_11
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -82,6 +83,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &4551445233757113495
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400259357749973289}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.08, y: 0.08}
+    newSize: {x: 0.63920873, y: 0.6398451}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 2
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.08, y: 0.08}
+  m_EdgeRadius: 0
 --- !u!1 &1536857448844530097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,7 +1065,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9221970340441806530}
   - component: {fileID: 6080945922180191167}
-  m_Layer: 0
+  - component: {fileID: 6174589414737578082}
+  m_Layer: 10
   m_Name: tiles_10 (5)
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -1110,6 +1138,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &6174589414737578082
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2746546670811365044}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.08, y: 0.08}
+    newSize: {x: 0.07967011, y: 0.16051094}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 2
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.08, y: 0.08}
+  m_EdgeRadius: 0
 --- !u!1 &3646955263686854698
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,7 +1174,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2414582918143531322}
   - component: {fileID: 3085695462367137860}
-  m_Layer: 0
+  - component: {fileID: 5427276500820503217}
+  m_Layer: 10
   m_Name: tiles_10 (7)
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -1192,6 +1247,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &5427276500820503217
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3646955263686854698}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.08, y: 0.08}
+    newSize: {x: 0.16, y: 0.07881523}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 2
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.08, y: 0.08}
+  m_EdgeRadius: 0
 --- !u!1 &5544215838357573932
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,7 +1318,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696042f5f68b87a4388b9c1b14917829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openingDirection: 2
   roomTR: {fileID: 1536857449177135424}
   roomTL: {fileID: 6771685618870093269, guid: cc186d1e0493e9249a9731b721c6e30e, type: 3}
   roomTB: {fileID: 8553001679908266618, guid: ab68e96bb23a28e47a8c0c69d20e8e8e, type: 3}
@@ -1247,6 +1327,7 @@ MonoBehaviour:
   roomLR: {fileID: 4909337442655690310, guid: eb79c4d8ba581c644a9e7711876cb6f6, type: 3}
   roomL: {fileID: 6061835951787221780, guid: 593d6b0c1bf7209439c8a7cbb1c0fc7c, type: 3}
   roomB: {fileID: 4304431953973099822, guid: 1afd7c4a2eb3d35458e4d33faab891bc, type: 3}
+  openingDirection: 2
 --- !u!61 &5999470023895130726
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1448,7 +1529,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696042f5f68b87a4388b9c1b14917829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openingDirection: 0
   roomTR: {fileID: 6439515947539145017, guid: 409d140b859366c4eab5aecac6944b2c, type: 3}
   roomTL: {fileID: 6771685618870093269, guid: cc186d1e0493e9249a9731b721c6e30e, type: 3}
   roomTB: {fileID: 8553001679908266618, guid: ab68e96bb23a28e47a8c0c69d20e8e8e, type: 3}
@@ -1458,6 +1538,7 @@ MonoBehaviour:
   roomLR: {fileID: 4909337442655690310, guid: eb79c4d8ba581c644a9e7711876cb6f6, type: 3}
   roomL: {fileID: 6061835951787221780, guid: 593d6b0c1bf7209439c8a7cbb1c0fc7c, type: 3}
   roomB: {fileID: 4304431953973099822, guid: 1afd7c4a2eb3d35458e4d33faab891bc, type: 3}
+  openingDirection: 0
 --- !u!61 &2672987751553384727
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1516,7 +1597,7 @@ GameObject:
   - component: {fileID: 2851061481917768079}
   m_Layer: 0
   m_Name: ground
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

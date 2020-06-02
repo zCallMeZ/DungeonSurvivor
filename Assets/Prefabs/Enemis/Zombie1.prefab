@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 6496020176555416447}
   - component: {fileID: 683549637}
   - component: {fileID: 683549631}
-  - component: {fileID: 683549632}
   m_Layer: 8
   m_Name: Zombie1
   m_TagString: Zombie1
@@ -75,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 113690357
   m_SortingLayer: 4
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 72511f888798a3346b45543f4d4ab3f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -118,7 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ba069cb900b2141be00e3ff17111d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.3
+  player: {fileID: 0}
+  speed: 3
 --- !u!58 &6496020176555416447
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -324,16 +324,3 @@ PolygonCollider2D:
       - {x: -0.24700001, y: -0.324}
       - {x: -0.25500003, y: -0.266}
       - {x: -0.223, y: -0.32200003}
---- !u!114 &683549632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3308571316649898203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f53e8e2ee0126f546ad0e1fc192f14e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}

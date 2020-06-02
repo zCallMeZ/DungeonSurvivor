@@ -2,23 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-public class ZombieHealthAndScore : MonoBehaviour
+public class ZombieHealth : MonoBehaviour
 {
     float healthMax = 15;
     float curHealth = 15;
     float takeDmg = 5;
 
-    float score = 10;
-    float curScore = 0;
-
-    [SerializeField] TextMeshProUGUI scoreText;
     private void Start()
     {
         curHealth = healthMax;
     }
     void Update()
     {
-        scoreText.text = curScore.ToString("F0");
 
         if (curHealth <= 0)
         {
@@ -30,7 +25,6 @@ public class ZombieHealthAndScore : MonoBehaviour
     void TakeDmg()
     { 
         curHealth -= takeDmg;
-        curScore += score;
     }
 
 

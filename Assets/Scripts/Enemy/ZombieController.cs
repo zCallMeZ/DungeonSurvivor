@@ -2,10 +2,12 @@
 
 public class ZombieController : MonoBehaviour
 {
-    public float speed;
-    private Transform target;
-    bool isFollow = false;
+    [SerializeField] Transform player;
+    Rigidbody2D rb;
+    Vector2 movement;
+    [SerializeField] float speed = 3f;
 
+    bool isFollow = false;
     enum State
     {
         WALK,
@@ -19,16 +21,33 @@ public class ZombieController : MonoBehaviour
 
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("player").GetComponent<Transform>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        if(isFollow)
+        if (isFollow)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            Vector3 direction = player.position - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 270;
+            rb.rotation = angle;
+            direction.Normalize();
+            movement = direction;
         }
-      
+    }
+
+    private void FixedUpdate()
+    {
+        moveCharacter(movement);
+    }
+
+    void moveCharacter(Vector2 direction)
+    {
+        rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
+    }
+
+    void ZombieBehavior()
+    {
         //TODO(@Solange) Where is the code?
         switch (state)
         {

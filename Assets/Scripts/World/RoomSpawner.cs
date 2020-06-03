@@ -15,17 +15,22 @@ public class RoomSpawner : MonoBehaviour
     [SerializeField] private GameObject roomL;
     [SerializeField] private GameObject roomB;
 
-    bool canSpawn = true;
-    int maxRoom = 20;
+    private bool canSpawn = true;
+    private int maxRoom = 20;
 
-    static int roomIndex = 0;
-    [SerializeField] Direction openingDirection;
+    private static int roomIndex = 0;
+    [SerializeField] private Direction openingDirection;
 
+    enum Direction : short
+    {
+        BOTTOM = 0,
+        TOP,
+        LEFT,
+        RIGHT
+    }
     void Start()
     {
         roomIndex++;
-        Debug.Log(roomIndex);
-        //StartCoroutine("Coroutine");
     }
 
     void Update()
@@ -34,25 +39,6 @@ public class RoomSpawner : MonoBehaviour
         {
             SpawningRoom();
         }
-    }
-
-    //IEnumerator Coroutine()
-    //{
-    //    while(canSpawn)
-    //    {
-
-    //    yield return new WaitForSeconds(1);
-
-    //    SpawningRoom();          
-    //    }
-    //}
-
-    enum Direction
-    {
-        BOTTOM = 0,
-        TOP = 1,
-        LEFT = 2,
-        RIGHT = 3
     }
 
     void SpawningRoom()
@@ -213,17 +199,6 @@ public class RoomSpawner : MonoBehaviour
             canSpawn = false;
         }
     }
-
-    //void OnCollisionStay2D(Collision2D collision)
-    //{
-    //    Debug.Log(collision);
-    //    if (collision.gameObject.CompareTag("ground"))
-    //    {
-    //        Destroy(gameObject.transform.parent);
-    //    }    
-    //}
-
-
 
 }
 

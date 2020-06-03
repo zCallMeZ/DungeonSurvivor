@@ -28,7 +28,7 @@ public class ZombieHealth : MonoBehaviour
     }
 
 
-    void OnTriggerEnter2D(Collision2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Bullet")) //TODO(@Bryan) Use more modern function collision.gameobject.CompareTage("zombie1")
         {

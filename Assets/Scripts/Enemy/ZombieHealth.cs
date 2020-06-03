@@ -28,12 +28,7 @@ public class ZombieHealth : MonoBehaviour
         curHealth -= takeDmg;
     }
 
-
-<<<<<<< HEAD:Assets/ZombieHealth.cs
-    void OnCollisionEnter2D(Collision2D other)
-=======
     void OnCollisionEnter2D(Collision2D collision)
->>>>>>> master:Assets/Scripts/Enemy/ZombieHealth.cs
     {
         if (collision.gameObject.CompareTag("Bullet")) //TODO(@Bryan) Use more modern function collision.gameobject.CompareTage("zombie1")
         {

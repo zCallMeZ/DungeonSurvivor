@@ -342,6 +342,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &641558504
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 641558505}
+  m_Layer: 0
+  m_Name: respawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &641558505
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641558504}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1138049925}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &867250748
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,6 +627,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!4 &1138049925 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8713151072818298126, guid: b881118bfa049a544a4c3aa1f1a986d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1917636320}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1861226206
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,9 +806,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4351161624450909496, guid: 5c5d064e6c3864a49b43a0df04f0e863,
+        type: 3}
+      propertyPath: m_TagString
+      value: Zombie3
+      objectReference: {fileID: 0}
     - target: {fileID: 4351161624795657626, guid: 5c5d064e6c3864a49b43a0df04f0e863,
         type: 3}
       propertyPath: m_Name
+      value: Zombie3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4351161624795657626, guid: 5c5d064e6c3864a49b43a0df04f0e863,
+        type: 3}
+      propertyPath: m_TagString
       value: Zombie3
       objectReference: {fileID: 0}
     - target: {fileID: 4351161624795657627, guid: 5c5d064e6c3864a49b43a0df04f0e863,
@@ -844,6 +890,11 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 113306469}
+    - target: {fileID: 4737940132981773647, guid: 98da144f974e7a941bef890776a561d7,
+        type: 3}
+      propertyPath: respawn
+      value: 
+      objectReference: {fileID: 641558505}
     - target: {fileID: 4737940133067839364, guid: 98da144f974e7a941bef890776a561d7,
         type: 3}
       propertyPath: cam

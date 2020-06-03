@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Security.Cryptography;
 
 public class PlayerHealth1 : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerHealth1 : MonoBehaviour
     float takeHealth = 10;
 
     [SerializeField] TextMeshProUGUI healthText;
+    [SerializeField] Transform respawn;
 
     private void Start()
     {
@@ -45,10 +47,13 @@ public class PlayerHealth1 : MonoBehaviour
         if (collision.gameObject.CompareTag("Zombie2"))
         {
             TakeDmg();
+            TakeDmg();
+            TakeDmg();
         }
         if (collision.gameObject.CompareTag("Zombie3"))
         {
             TakeDmg();
+            transform.position = respawn.transform.position;
         }
         if (collision.gameObject.CompareTag("Zombie4"))
         {

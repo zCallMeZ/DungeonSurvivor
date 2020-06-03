@@ -78,7 +78,7 @@ public class ZombieController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "player")
+        if (other.gameObject.CompareTag("player"))
         {
             isFollow = true;
         }

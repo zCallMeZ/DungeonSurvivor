@@ -1,17 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+
 public class ZombieHealth : MonoBehaviour
 {
-    float healthMax = 15;
-    float curHealth = 15;
-    float takeDmg = 5;
+    float healthMax;
+    [SerializeField] float curHealth = 3f;
+    float takeDmg = 1f;
 
     private void Start()
     {
-        curHealth = healthMax;
+        healthMax = curHealth;
     }
+
     void Update()
     {
 

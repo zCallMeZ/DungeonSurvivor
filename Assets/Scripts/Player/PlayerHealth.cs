@@ -34,7 +34,7 @@ public class PlayerHealth : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Zombie1")) //TODO(@Bryan) Use more modern function collision.gameobject.CompareTage("zombie1")
+        if (collision.gameObject.CompareTag("Zombie1"))
         {
             TakeDmg();
         }

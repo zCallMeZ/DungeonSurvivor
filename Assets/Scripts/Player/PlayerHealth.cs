@@ -51,10 +51,10 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDmg();
         }
-        //if (collision.gameObject.CompareTag("health"))
-        //{
-        //    TakeHealth();
-        //}
+        if (collision.gameObject.CompareTag("health"))
+        {
+            TakeHealth();
+        }
     }
 
 }

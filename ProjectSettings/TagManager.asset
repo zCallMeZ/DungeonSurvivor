@@ -19,6 +19,7 @@ TagManager:
   - point3
   - point4
   - chest
+  - clock
   layers:
   - Default
   - TransparentFX

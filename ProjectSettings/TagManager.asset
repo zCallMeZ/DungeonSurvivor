@@ -20,6 +20,7 @@ TagManager:
   - point4
   - chest
   - clock
+  - health
   layers:
   - Default
   - TransparentFX

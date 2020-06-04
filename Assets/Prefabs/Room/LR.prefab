@@ -538,6 +538,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696042f5f68b87a4388b9c1b14917829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zombieClassic: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
+    type: 3}
+  zombieKamikaze: {fileID: 8120133638133753409, guid: abf9499fb92faa54c9b5c4be4e80926d,
+    type: 3}
+  zombieTank: {fileID: 0}
+  zombieSpawn1: {fileID: 5874743960901501145}
+  zombieSpawn2: {fileID: 5519735827651063344}
+  zombieSpawn3: {fileID: 7753043392673574647}
+  zombieSpawn4: {fileID: 3572891237104106979}
+  zombieSpawn5: {fileID: 3655038238437956179}
+  health: {fileID: 6853840968628087672, guid: 31772cface6c55a418d4a3846df7b9ef, type: 3}
+  healthSpawn1: {fileID: 5969680569828134387}
+  healthSpawn2: {fileID: 8178928860333948034}
+  healthSpawn3: {fileID: 4273798785302507132}
+  healthSpawn4: {fileID: 4171460170008845622}
   roomTR: {fileID: 1536857449177135424, guid: dfc7752ac8599da4f9c1810dc052f436, type: 3}
   roomTL: {fileID: 6771685618870093269, guid: cc186d1e0493e9249a9731b721c6e30e, type: 3}
   roomTB: {fileID: 8553001679908266618, guid: ab68e96bb23a28e47a8c0c69d20e8e8e, type: 3}
@@ -858,6 +873,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696042f5f68b87a4388b9c1b14917829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zombieClassic: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
+    type: 3}
+  zombieKamikaze: {fileID: 8120133638133753409, guid: abf9499fb92faa54c9b5c4be4e80926d,
+    type: 3}
+  zombieTank: {fileID: 0}
+  zombieSpawn1: {fileID: 5874743960901501145}
+  zombieSpawn2: {fileID: 5519735827651063344}
+  zombieSpawn3: {fileID: 7753043392673574647}
+  zombieSpawn4: {fileID: 3572891237104106979}
+  zombieSpawn5: {fileID: 3655038238437956179}
+  health: {fileID: 6853840968628087672, guid: 31772cface6c55a418d4a3846df7b9ef, type: 3}
+  healthSpawn1: {fileID: 5969680569828134387}
+  healthSpawn2: {fileID: 8178928860333948034}
+  healthSpawn3: {fileID: 4273798785302507132}
+  healthSpawn4: {fileID: 4171460170008845622}
   roomTR: {fileID: 1536857449177135424, guid: dfc7752ac8599da4f9c1810dc052f436, type: 3}
   roomTL: {fileID: 6771685618870093269, guid: cc186d1e0493e9249a9731b721c6e30e, type: 3}
   roomTB: {fileID: 8553001679908266618, guid: ab68e96bb23a28e47a8c0c69d20e8e8e, type: 3}
@@ -867,7 +897,7 @@ MonoBehaviour:
   roomLR: {fileID: 4909337442655690310}
   roomL: {fileID: 6061835951787221780, guid: 593d6b0c1bf7209439c8a7cbb1c0fc7c, type: 3}
   roomB: {fileID: 4304431953973099822, guid: 1afd7c4a2eb3d35458e4d33faab891bc, type: 3}
-  openingDirection: 3
+  openingDirection: 2
 --- !u!61 &4938724854510457189
 BoxCollider2D:
   m_ObjectHideFlags: 0

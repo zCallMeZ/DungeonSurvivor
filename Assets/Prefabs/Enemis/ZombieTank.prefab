@@ -502,7 +502,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4351161624795657627}
   m_Layer: 0
-  m_Name: Zombie3
+  m_Name: ZombieTank
   m_TagString: Zombie3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

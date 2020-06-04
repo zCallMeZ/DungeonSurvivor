@@ -817,6 +817,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4737940133067839365, guid: 98da144f974e7a941bef890776a561d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4737940133067839384, guid: 98da144f974e7a941bef890776a561d7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -892,3 +897,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be6bca4306f29ae48bc810acf9a21c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panelWin: {fileID: 0}

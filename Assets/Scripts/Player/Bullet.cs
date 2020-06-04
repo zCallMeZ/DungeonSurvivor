@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    private float time = 3f;
+
     private void Start()
     {
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, time);
     }
 
     void OnCollisionEnter2D(Collision2D collision)

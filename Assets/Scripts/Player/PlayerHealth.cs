@@ -5,88 +5,56 @@ using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
-    float totalHealth = 100f;
-    float highDmg = 5f;
-    float normalDmg = 5f;
-    float lowDmg = 5f;
-    float health = 10f;
+    private float curHealth = 100;
+    private float takeHealth = 10;
+    [SerializeField] private float takeDmg = 5;
 
-    enum DmgType {
-        HIGH,
-        NORMAL,
-        LOW
-    }
-    
-    Score score;
-    [SerializeField] private TextMeshProUGUI healthText; //TODO(@Bryan) The variable score (which is private) doesn't have the modifier private, but this one does. Make a choice.
+    [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] private Transform respawn;
 
-    private void Start()
+    void Update()
     {
-        totalHealth = 100f; //TODO(@Bryan) If it's a const value, then don't reassign it the start function.
-    }
-    private void Update()
-    {
-        healthText.text = totalHealth.ToString("F0");
+        healthText.text = curHealth.ToString("F0");
 
-        if (totalHealth <= 0f)
+        if (curHealth <= 0)
         {
-            totalHealth = 0f;
+            curHealth = 0f;
         }
     }
 
-    //TODO(@Bryan) Those 3 functions do exactly the same thing. You could use a unique function with a parameter. The parameter can be an enum (HIGH, NORMAL, LOW)
-    void TakeHighDmg() //TODO(@Bryan) This function is private but you don't use the modifier "private"
+    void TakeDmg()
     {
-        health -= highDmg;
+        curHealth -= takeDmg;
     }
 
-    void TakeNormalDmg()
+    void TakeHealth()
     {
-        health -= normalDmg;
+        curHealth -= takeHealth;
     }
 
-    void TakeLowDmg()
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        health -= lowDmg;
-    }
-
-    private void TakeHealth()
-    {
-        totalHealth += health;
-
-        if (totalHealth >= 100f) //TODO(@Bryan) Magic number. You can create a const variable called MAX_HEALTH
+        if (collision.gameObject.CompareTag("Zombie1"))
         {
-            totalHealth = 100f; //TODO(@Bryan) Magic number.
+            TakeDmg();
         }
-    }
-
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag ("Zombie1")) //TODO(@Bryan) Use more modern function collision.gameobject.CompareTage("zombie1")
+        if (collision.gameObject.CompareTag("Zombie2"))
         {
-            TakeLowDmg();
-            score.GetLowPoint();
-            Debug.Log(totalHealth + "LifePlayer");
+            TakeDmg();
         }
-        if (collision.gameObject.CompareTag ("Zombie2"))
+        if (collision.gameObject.CompareTag("Zombie3"))
         {
-            TakeNormalDmg();
-            score.GetNormalPoint();
-        }
-        if (collision.gameObject.CompareTag ("Zombie3"))
-        {
-            TakeHighDmg();
-            score.GetHighPoint();
+            TakeDmg();
+            transform.position = respawn.transform.position;
         }
         if (collision.gameObject.CompareTag("Zombie4"))
         {
-            TakeHighDmg();
-            score.GetHighPoint();
+            TakeDmg();
         }
-        if (collision.gameObject.CompareTag ("health"))
-        {
-            TakeHealth();
-        }
+        //if (collision.gameObject.CompareTag("health"))
+        //{
+        //    TakeHealth();
+        //}
     }
+
 }

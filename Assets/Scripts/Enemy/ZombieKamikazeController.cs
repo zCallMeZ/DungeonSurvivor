@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Zombie2Controller : MonoBehaviour
+public class ZombieKamikazeController : MonoBehaviour
 {
     [SerializeField] Transform player;
     Rigidbody2D rb;

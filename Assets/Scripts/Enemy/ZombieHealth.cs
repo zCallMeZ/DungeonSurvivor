@@ -11,7 +11,7 @@ public class ZombieHealth : MonoBehaviour
 
     Animator animator;
 
-    private void Start()
+    void Start()
     {
         animator = GetComponent<Animator>();
         healthMax = curHealth;

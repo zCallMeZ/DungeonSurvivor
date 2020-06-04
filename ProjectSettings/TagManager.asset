@@ -18,6 +18,7 @@ TagManager:
   - point2
   - point3
   - point4
+  - chest
   layers:
   - Default
   - TransparentFX

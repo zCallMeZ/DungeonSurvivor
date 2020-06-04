@@ -7,19 +7,29 @@ public class ZombieHealth : MonoBehaviour
     float healthMax;
     [SerializeField] float curHealth = 3f;
     float takeDmg = 1f;
+    bool isDead = false;
+
+    Animator animator;
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         healthMax = curHealth;
     }
 
     void Update()
     {
-
         if (curHealth <= 0)
         {
             curHealth = 0f;
-            Destroy(gameObject);
+            isDead = true;
+           
+        }
+        if (isDead)
+        {
+            animator.SetBool("isDead", true);
+            Destroy(this);
+            Destroy (gameObject, 1.0f);
         }
     }
 
@@ -30,7 +40,7 @@ public class ZombieHealth : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Bullet")) //TODO(@Bryan) Use more modern function collision.gameobject.CompareTage("zombie1")
+        if (collision.gameObject.CompareTag("Bullet"))
         {
             TakeDmg();
         }

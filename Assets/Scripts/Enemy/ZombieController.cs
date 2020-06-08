@@ -7,7 +7,12 @@ public class ZombieController : MonoBehaviour
     Vector2 movement;
     [SerializeField] float speed = 3f;
 
-    bool isFollow = false;
+    // Variables for waypoint graph
+    [SerializeField] Transform[] waypoints;
+    int waypointIndex = 0;
+
+    bool isFollowingPlayer = false;
+    bool isAttackedPlayer = false;
     enum State
     {
         WALK,
@@ -22,11 +27,15 @@ public class ZombieController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        transform.position = waypoints[waypointIndex].transform.position;
     }
 
     void Update()
     {
-        if (isFollow)
+        Move();
+
+        if (isFollowingPlayer)
         {
             Vector3 direction = player.position - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 270;
@@ -39,6 +48,21 @@ public class ZombieController : MonoBehaviour
     private void FixedUpdate()
     {
         moveCharacter(movement);
+    }
+
+    void Move()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, speed * Time.deltaTime);
+
+        if (transform.position == waypoints[waypointIndex].transform.position)
+        {
+            waypointIndex += 1;
+        }
+
+        if(waypointIndex == waypoints.Length)
+        {
+            waypointIndex = 0;
+        }
     }
 
     void moveCharacter(Vector2 direction)
@@ -80,7 +104,15 @@ public class ZombieController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("player"))
         {
-            isFollow = true;
+            isFollowingPlayer = true;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("player"))
+        {
+            isAttackedPlayer = true;
         }
     }
 }

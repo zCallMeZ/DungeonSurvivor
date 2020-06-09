@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
@@ -6,15 +7,33 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject panelCredits;
     [SerializeField] private GameObject panelPause;
 
+    [SerializeField] private GameObject panelGameOver;
+    [SerializeField] private PlayerHealth playerHealth;
+
     private const int activatePanel = 0;
     private const int desactivatePanel = 1;
 
-    void Update() //TODO(@Solange) Remove this function if it's not used. Because this function will still be called every frame.
+    void Update()
     {
-        //if (Input.GetButtonDown("Pause"))
-        //{
-        //    ActivatePanelPause();
-        //}
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (panelPause.activeSelf)
+            {
+                DesactivatePanelPause();
+            }
+            else
+            {
+                ActivatePanelPause();
+            }
+        }
+
+        float playerDeath = playerHealth.GetPlayerLife();
+
+        if (playerDeath <= 0.0f)
+        {
+            panelGameOver.gameObject.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 
     public void ActivatePanelCredits()
@@ -51,5 +70,16 @@ public class MenuManager : MonoBehaviour
     {
         panelMenu.gameObject.SetActive(false);
         Time.timeScale = desactivatePanel;
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

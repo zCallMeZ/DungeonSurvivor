@@ -1186,6 +1186,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7177925750513961712}
     m_Modifications:
+    - target: {fileID: 683549637, guid: 0aeda856c09efac4983d717a70a64678, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2231038970929803943, guid: 0aeda856c09efac4983d717a70a64678,
         type: 3}
       propertyPath: waypoints.Array.data[0]
@@ -1266,6 +1270,11 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[15]
       value: 
       objectReference: {fileID: 7177925750989416037}
+    - target: {fileID: 2231038970929803943, guid: 0aeda856c09efac4983d717a70a64678,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
         type: 3}
       propertyPath: m_Name

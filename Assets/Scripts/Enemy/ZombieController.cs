@@ -11,8 +11,10 @@ public class ZombieController : MonoBehaviour
     [SerializeField] Transform[] waypoints;
     int waypointIndex = 0;
 
+    Animator animator;
+
+    // Bool for animations
     bool isFollowingPlayer = false;
-    bool isAttackedPlayer = false;
     enum State
     {
         WALK,
@@ -27,13 +29,17 @@ public class ZombieController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
         transform.position = waypoints[waypointIndex].transform.position;
     }
 
     void Update()
     {
-        Move();
+        if (!isFollowingPlayer)
+        {
+            Move();
+        }
 
         if (isFollowingPlayer)
         {
@@ -53,6 +59,11 @@ public class ZombieController : MonoBehaviour
     void Move()
     {
         transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, speed * Time.deltaTime);
+        Vector3 direction = transform.position - waypoints[waypointIndex].transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 270;
+        rb.rotation = angle;
+        direction.Normalize();
+        movement = direction;
 
         if (transform.position == waypoints[waypointIndex].transform.position)
         {
@@ -112,7 +123,15 @@ public class ZombieController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("player"))
         {
-            isAttackedPlayer = true;
+            animator.SetBool("IsAttackPlayer", true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("player"))
+        {
+            isFollowingPlayer = false;
         }
     }
 }

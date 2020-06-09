@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 4737940133067839390}
   - component: {fileID: 4737940133067839387}
   - component: {fileID: 8000152193645269909}
-  - component: {fileID: 4737940132981773647}
+  - component: {fileID: 5084503938831667328}
   m_Layer: 9
   m_Name: Player
   m_TagString: player
@@ -218,8 +218,8 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.8
---- !u!114 &4737940132981773647
+  m_Radius: 1.5
+--- !u!114 &5084503938831667328
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -228,7 +228,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4737940133067839365}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2e81b6cb2b29eb429ef38c5ab4a58b0, type: 3}
+  m_Script: {fileID: 11500000, guid: a542779961099d44c9f0c8d37c7dd627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  takeDmg: 5
   healthText: {fileID: 0}
+  respawn: {fileID: 0}

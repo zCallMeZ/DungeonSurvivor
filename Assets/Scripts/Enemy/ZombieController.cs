@@ -24,8 +24,6 @@ public class ZombieController : MonoBehaviour
         DEATH
     }
 
-    State state = State.WALK;
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -59,12 +57,7 @@ public class ZombieController : MonoBehaviour
     void Move()
     {
         transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, speed * Time.deltaTime);
-        Vector3 direction = transform.position - waypoints[waypointIndex].transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 270;
-        rb.rotation = angle;
-        direction.Normalize();
-        movement = direction;
-
+        
         if (transform.position == waypoints[waypointIndex].transform.position)
         {
             waypointIndex += 1;
@@ -79,36 +72,6 @@ public class ZombieController : MonoBehaviour
     void moveCharacter(Vector2 direction)
     {
         rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
-    }
-
-    void ZombieBehavior()
-    {
-        //TODO(@Solange) Where is the code?
-        switch (state)
-        {
-            case State.WALK:
-            
-                break;
-
-            case State.ALERT:
-
-                break;
-
-            case State.PURSUIT:
-
-                break;
-
-            case State.ATTACKPLAYER:
-                //Alert other zombien
-                
-                
-                //Attack Player
-                break;
-
-            case State.DEATH:
-                Destroy(gameObject);
-                break;
-        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -132,6 +95,14 @@ public class ZombieController : MonoBehaviour
         if (other.gameObject.CompareTag("player"))
         {
             isFollowingPlayer = false;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("player"))
+        {
+            animator.SetBool("IsAttackPlayer", false);
         }
     }
 }

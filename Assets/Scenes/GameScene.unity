@@ -274,6 +274,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1495f45723abf9a4d9cff4390ea61d04, type: 3}
+--- !u!1 &1412454539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4737940133067839365, guid: 98da144f974e7a941bef890776a561d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 352961025}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1412454547 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4737940133067839384, guid: 98da144f974e7a941bef890776a561d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 352961025}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1511806550
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,7 +350,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1604961754
 GameObject:
@@ -667,6 +679,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8713151072865902462, guid: b881118bfa049a544a4c3aa1f1a986d8,
+        type: 3}
+      propertyPath: zombieSpawn1
+      value: 
+      objectReference: {fileID: 7177925750513961712, guid: 334ed02d2847ca94381fa018bf93dc14,
+        type: 3}
+    - target: {fileID: 8713151072921478956, guid: b881118bfa049a544a4c3aa1f1a986d8,
+        type: 3}
+      propertyPath: zombieClassic
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713151072921478956, guid: b881118bfa049a544a4c3aa1f1a986d8,
+        type: 3}
+      propertyPath: zombieSpawn1
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713151073318402065, guid: b881118bfa049a544a4c3aa1f1a986d8,
+        type: 3}
+      propertyPath: zombieSpawn1
+      value: 
+      objectReference: {fileID: 7177925750513961712, guid: 334ed02d2847ca94381fa018bf93dc14,
+        type: 3}
+    - target: {fileID: 8713151073981654660, guid: b881118bfa049a544a4c3aa1f1a986d8,
+        type: 3}
+      propertyPath: zombieSpawn1
+      value: 
+      objectReference: {fileID: 7177925750513961712, guid: 334ed02d2847ca94381fa018bf93dc14,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b881118bfa049a544a4c3aa1f1a986d8, type: 3}
 --- !u!1 &2139889015
@@ -765,7 +805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dbe88f8a6b667d45bcf0f342db4f3a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1412454539}
 --- !u!1001 &7177925751286516962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -773,11 +813,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5654116936978224449, guid: 334ed02d2847ca94381fa018bf93dc14,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7177925750513961712, guid: 334ed02d2847ca94381fa018bf93dc14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -816,7 +851,7 @@ PrefabInstance:
     - target: {fileID: 7177925750513961712, guid: 334ed02d2847ca94381fa018bf93dc14,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7177925750513961712, guid: 334ed02d2847ca94381fa018bf93dc14,
         type: 3}
@@ -838,5 +873,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZombieClassic
       objectReference: {fileID: 0}
+    - target: {fileID: 7177925750513961715, guid: 334ed02d2847ca94381fa018bf93dc14,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037356037429991224, guid: 334ed02d2847ca94381fa018bf93dc14,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1412454547}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 334ed02d2847ca94381fa018bf93dc14, type: 3}

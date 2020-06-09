@@ -15,14 +15,6 @@ public class ZombieController : MonoBehaviour
 
     // Bool for animations
     bool isFollowingPlayer = false;
-    enum State
-    {
-        WALK,
-        ALERT,
-        PURSUIT,
-        ATTACKPLAYER,
-        DEATH
-    }
 
     void Start()
     {

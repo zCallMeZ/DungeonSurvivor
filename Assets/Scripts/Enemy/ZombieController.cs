@@ -5,68 +5,96 @@ public class ZombieController : MonoBehaviour
     [SerializeField] Transform player;
     Rigidbody2D rb;
     Vector2 movement;
-    [SerializeField] float speed = 3f;
-
-    // Variables for waypoint graph
-    [SerializeField] Transform[] waypoints;
-    int waypointIndex = 0;
-
+    [SerializeField] private float speed = 3f;
     Animator animator;
 
-    // Bool for animations
-    bool isFollowingPlayer = false;
+    Vector3 initialPosition;
 
-    void Start()
+
+    private bool isAttack = false;
+
+    // Bool for animations
+    private bool isFollowingPlayer = false;
+
+    enum State
+    {
+        IDLE,
+        FOLLOW,
+        ATTACK,
+        DEAD,
+    }
+
+    State state = State.IDLE;
+
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
-        transform.position = waypoints[waypointIndex].transform.position;
+        initialPosition = transform.position;
     }
 
-    void Update()
+    private void Update()
     {
-        if (!isFollowingPlayer)
+        switch (state)
         {
-            Move();
-        }
+            case State.IDLE:
 
-        if (isFollowingPlayer)
-        {
-            Vector3 direction = player.position - transform.position;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 270;
-            rb.rotation = angle;
-            direction.Normalize();
-            movement = direction;
+                transform.position = initialPosition;
+
+                if (isFollowingPlayer)
+                {
+                    state = State.FOLLOW;
+                }
+                break;
+
+            case State.FOLLOW:
+
+                moveCharacter();
+
+                if (!isFollowingPlayer)
+                {
+                    state = State.IDLE;
+                }
+
+                if (isAttack)
+                {
+                    state = State.ATTACK;
+                }
+
+                break;
+
+            case State.ATTACK:
+
+                moveCharacter();
+
+                animator.SetBool("IsAttackPlayer", true);
+
+                if (!isAttack)
+                {
+                    state = State.IDLE;
+                    animator.SetBool("IsAttackPlayer", false);
+                }
+
+                break;
+
+            case State.DEAD:
+
+                break;
         }
     }
 
-    private void FixedUpdate()
+    private void moveCharacter()
     {
-        moveCharacter(movement);
-    }
+        Vector2 direction = player.position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 270;
+        rb.rotation = angle;
+        direction.Normalize();
+        movement = direction;
 
-    void Move()
-    {
-        transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, speed * Time.deltaTime);
-        
-        if (transform.position == waypoints[waypointIndex].transform.position)
-        {
-            waypointIndex += 1;
-        }
-
-        if(waypointIndex == waypoints.Length)
-        {
-            waypointIndex = 0;
-        }
-    }
-
-    void moveCharacter(Vector2 direction)
-    {
         rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("player"))
         {
@@ -74,11 +102,11 @@ public class ZombieController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("player"))
         {
-            animator.SetBool("IsAttackPlayer", true);
+            isAttack = true;
         }
     }
 
@@ -90,11 +118,11 @@ public class ZombieController : MonoBehaviour
         }
     }
 
-    void OnCollisionExit2D(Collision2D collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("player"))
         {
-            animator.SetBool("IsAttackPlayer", false);
+            isAttack = false;
         }
     }
 }

@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class ZombieHealth : MonoBehaviour
 {
-    float healthMax;
-    [SerializeField] float curHealth = 3f;
-    float takeDmg = 1f;
-    bool isDead = false;
+    private float healthMax;
+    [SerializeField] private float curHealth = 3f;
+    private float takeDmg = 1f;
+    private bool isDead = false;
 
     Animator animator;
 
-    void Start()
+    private void Start()
     {
         animator = GetComponent<Animator>();
         healthMax = curHealth;
     }
 
-    void Update()
+    private void Update()
     {
         if (curHealth <= 0)
         {
@@ -33,12 +33,12 @@ public class ZombieHealth : MonoBehaviour
         }
     }
 
-    void TakeDmg()
+    private void TakeDmg()
     { 
         curHealth -= takeDmg;
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {

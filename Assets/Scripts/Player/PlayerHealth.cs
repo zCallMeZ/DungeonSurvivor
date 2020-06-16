@@ -5,7 +5,7 @@ using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private float curHealth = 100;
+    public float curHealth = 100;
     private float takeHealth = 10;
     [SerializeField] private float takeDmg = 5;
 
@@ -32,6 +32,7 @@ public class PlayerHealth : MonoBehaviour
         curHealth -= takeHealth;
     }
 
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Zombie1"))
@@ -55,6 +56,10 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeHealth();
         }
+    }
+    public float GetPlayerLife()
+    {
+        return curHealth;
     }
 
 }

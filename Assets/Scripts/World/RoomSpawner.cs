@@ -9,10 +9,6 @@ public class RoomSpawner : MonoBehaviour
     [SerializeField] private GameObject zombieClassic;
     [SerializeField] private GameObject zombieKamikaze;
     [SerializeField] private Transform zombieSpawn1;
-    [SerializeField] private Transform zombieSpawn2;
-    [SerializeField] private Transform zombieSpawn3;
-    [SerializeField] private Transform zombieSpawn4;
-    [SerializeField] private Transform zombieSpawn5;
     private Transform zombieSpawnSelected;
 
     [SerializeField] private GameObject health;
@@ -205,15 +201,13 @@ public class RoomSpawner : MonoBehaviour
     void SpawnEnnemy()
     {
         int rand = Random.Range(0, 3);
-        if(rand == 0)
+        if (rand == 0)
         {
-            RandomEnnemySpawnPoint();
-            Instantiate(zombieKamikaze, zombieSpawnSelected.transform.position, Quaternion.identity);
+            Instantiate(zombieKamikaze, zombieSpawn1.transform.position, Quaternion.identity);
         }
         else
         {
-            RandomEnnemySpawnPoint();
-            Instantiate(zombieClassic, zombieSpawnSelected.transform.position, Quaternion.identity);
+            Instantiate(zombieClassic, zombieSpawn1.transform.position, Quaternion.identity);
         }
     }
 
@@ -221,31 +215,6 @@ public class RoomSpawner : MonoBehaviour
     {
         RandomHealthSpawnPoint();
         Instantiate(health, healthSpawnSelected.transform.position, Quaternion.identity);
-    }
-
-    void RandomEnnemySpawnPoint()
-    {
-        int rand = Random.Range(0, 5);
-        if (rand == 0)
-        {
-            zombieSpawnSelected = zombieSpawn1;
-        }
-        if (rand == 1)
-        {
-            zombieSpawnSelected = zombieSpawn2;
-        }
-        if (rand == 2)
-        {
-            zombieSpawnSelected = zombieSpawn3;
-        }
-        if (rand == 3)
-        {
-            zombieSpawnSelected = zombieSpawn4;
-        }
-        if (rand == 4)
-        {
-            zombieSpawnSelected = zombieSpawn5;
-        }
     }
 
     void RandomHealthSpawnPoint()

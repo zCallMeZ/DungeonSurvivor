@@ -11,13 +11,18 @@ public class LevelGeneration : MonoBehaviour
    [SerializeField] private GameObject [] rooms;
 
    private int direction;
+   private int directionDefault = 5; // Move Down
+
    private float moveAmountHorizontal = 12f;
    private float moveAmountVertical = 10f;
    private float timeBtwRoom;
    [SerializeField] float startTimeBtwRoom = 0.25f;
 
-   private int roomIndex;
-   private int maxRoom = 20;
+   [SerializeField] private float minX;
+   [SerializeField] private float maxX;
+   [SerializeField] private float minY;
+   private bool stopLevelGeneration = false;
+
    private void Start()
    {
       int randStartingPos = Random.Range(0, startingPositions.Length);
@@ -29,7 +34,7 @@ public class LevelGeneration : MonoBehaviour
 
    private void Update()
    {
-      if (timeBtwRoom <= 0)
+      if (timeBtwRoom <= 0 && stopLevelGeneration == false)
       {
          Move();
          timeBtwRoom = startTimeBtwRoom;
@@ -46,18 +51,41 @@ public class LevelGeneration : MonoBehaviour
    {
       if (direction == 1 || direction == 2) // Move Right !
       {
-         Vector2 newPos = new Vector2(transform.position.x + moveAmountHorizontal, transform.position.y);
-         transform.position = newPos;
+         if (transform.position.x < maxX)
+         {
+            Vector2 newPos = new Vector2(transform.position.x + moveAmountHorizontal, transform.position.y);
+            transform.position = newPos;            
+         }
+         else
+         {
+            direction = directionDefault;
+         }
+
       }
-      if (direction == 3 || direction == 4) // Move Left !
+      else if (direction == 3 || direction == 4) // Move Left !
       {
-         Vector2 newPos = new Vector2(transform.position.x - moveAmountHorizontal, transform.position.y);
-         transform.position = newPos;
+         if (transform.position.x > minX)
+         {
+            Vector2 newPos = new Vector2(transform.position.x - moveAmountHorizontal, transform.position.y);
+            transform.position = newPos;            
+         }
+         else
+         {
+            direction = directionDefault;
+         }
+
       }
-      if (direction == 5) // Move Down !
+      else if (direction == 5) // Move Down !
       {
-         Vector2 newPos = new Vector2(transform.position.x, transform.position.y - moveAmountVertical);
-         transform.position = newPos;
+         if (transform.position.y > minY)
+         {
+            Vector2 newPos = new Vector2(transform.position.x, transform.position.y - moveAmountVertical);
+            transform.position = newPos;            
+         }
+         else
+         {
+            stopLevelGeneration = true;
+         }
       }
 
       Instantiate(rooms[0], transform.position, Quaternion.identity);

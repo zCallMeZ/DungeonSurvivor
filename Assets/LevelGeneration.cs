@@ -2,17 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class LevelGeneration : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   [SerializeField] private Transform[] startingPositions;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   private void Start()
+   {
+      int randStartingPos = Random.Range(0, startingPositions.Length);
+      transform.position = startingPositions[randStartingPos].position;
+   }
 }

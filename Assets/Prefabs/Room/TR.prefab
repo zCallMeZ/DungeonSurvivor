@@ -2184,15 +2184,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696042f5f68b87a4388b9c1b14917829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombieClassic: {fileID: 7177925750513961715, guid: 334ed02d2847ca94381fa018bf93dc14,
+  zombieClassic: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
     type: 3}
   zombieKamikaze: {fileID: 8120133638133753409, guid: abf9499fb92faa54c9b5c4be4e80926d,
     type: 3}
   zombieSpawn1: {fileID: 1405749874371386940}
-  zombieSpawn2: {fileID: 4523758415145902741}
-  zombieSpawn3: {fileID: 1168377718547120577}
-  zombieSpawn4: {fileID: 5141519053785836789}
-  zombieSpawn5: {fileID: 6027904132283489626}
   health: {fileID: 6853840968628087672, guid: 31772cface6c55a418d4a3846df7b9ef, type: 3}
   healthSpawn1: {fileID: 7779694941189137354}
   healthSpawn2: {fileID: 8995809116127478233}
@@ -2547,15 +2543,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696042f5f68b87a4388b9c1b14917829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombieClassic: {fileID: 7177925750513961715, guid: 334ed02d2847ca94381fa018bf93dc14,
+  zombieClassic: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
     type: 3}
   zombieKamikaze: {fileID: 8120133638133753409, guid: abf9499fb92faa54c9b5c4be4e80926d,
     type: 3}
   zombieSpawn1: {fileID: 1405749874371386940}
-  zombieSpawn2: {fileID: 4523758415145902741}
-  zombieSpawn3: {fileID: 1168377718547120577}
-  zombieSpawn4: {fileID: 5141519053785836789}
-  zombieSpawn5: {fileID: 6027904132283489626}
   health: {fileID: 6853840968628087672, guid: 31772cface6c55a418d4a3846df7b9ef, type: 3}
   healthSpawn1: {fileID: 7779694941189137354}
   healthSpawn2: {fileID: 8995809116127478233}

@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696042f5f68b87a4388b9c1b14917829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombieClassic: {fileID: 7177925750513961715, guid: 334ed02d2847ca94381fa018bf93dc14,
+  zombieClassic: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
     type: 3}
   zombieKamikaze: {fileID: 8120133638133753409, guid: abf9499fb92faa54c9b5c4be4e80926d,
     type: 3}
@@ -834,7 +834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696042f5f68b87a4388b9c1b14917829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombieClassic: {fileID: 7177925750513961715, guid: 334ed02d2847ca94381fa018bf93dc14,
+  zombieClassic: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
     type: 3}
   zombieKamikaze: {fileID: 8120133638133753409, guid: abf9499fb92faa54c9b5c4be4e80926d,
     type: 3}

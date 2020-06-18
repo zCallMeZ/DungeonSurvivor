@@ -7,7 +7,6 @@ public class ZombieHealth : MonoBehaviour
     private float healthMax;
     [SerializeField] private float curHealth = 3f;
     private float takeDmg = 1f;
-    private bool isDead = false;
 
     Animator animator;
 
@@ -17,20 +16,9 @@ public class ZombieHealth : MonoBehaviour
         healthMax = curHealth;
     }
 
-    private void Update()
+    public bool IsAlive()
     {
-        if (curHealth <= 0)
-        {
-            curHealth = 0f;
-            isDead = true;
-           
-        }
-        if (isDead)
-        {
-            animator.SetBool("isDead", true);
-            Destroy(this);
-            Destroy (gameObject, 1.0f);
-        }
+        return curHealth > 0;
     }
 
     private void TakeDmg()

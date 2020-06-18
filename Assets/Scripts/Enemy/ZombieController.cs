@@ -2,23 +2,26 @@
 
 public class ZombieController : MonoBehaviour
 {
-    [SerializeField] Transform player;
-    Rigidbody2D rb;
-    Vector2 movement;
+    Transform player;
     [SerializeField] private float speed = 3f;
+
+    private SpriteRenderer colorZombieState;
+
+    ZombieHealth zombieHealth;
+
+    Rigidbody2D rb;
     Animator animator;
 
+    Vector2 movement;
     Vector3 initialPosition;
 
-
     private bool isAttack = false;
-
-    // Bool for animations
     private bool isFollowingPlayer = false;
 
     enum State
     {
         IDLE,
+        RETURN_IDLE,
         FOLLOW,
         ATTACK,
         DEAD,
@@ -28,18 +31,27 @@ public class ZombieController : MonoBehaviour
 
     private void Start()
     {
+        colorZombieState = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         initialPosition = transform.position;
+        player = FindObjectOfType<PlayerController>().transform;
+        zombieHealth = GetComponent<ZombieHealth>();
     }
 
     private void Update()
     {
+        if (!zombieHealth.IsAlive())
+        {
+            state = State.DEAD;
+        }
         switch (state)
         {
             case State.IDLE:
 
-                transform.position = initialPosition;
+                //transform.position = initialPosition;
+                colorZombieState.color = Color.white;
+                
 
                 if (isFollowingPlayer)
                 {
@@ -49,10 +61,13 @@ public class ZombieController : MonoBehaviour
 
             case State.FOLLOW:
 
+                colorZombieState.color = Color.red;
+
                 moveCharacter();
 
                 if (!isFollowingPlayer)
                 {
+                    rb.velocity = Vector2.zero;
                     state = State.IDLE;
                 }
 
@@ -65,12 +80,15 @@ public class ZombieController : MonoBehaviour
 
             case State.ATTACK:
 
+                colorZombieState.color = Color.blue;
+
                 moveCharacter();
 
                 animator.SetBool("IsAttackPlayer", true);
 
                 if (!isAttack)
                 {
+                    rb.velocity = Vector2.zero;
                     state = State.IDLE;
                     animator.SetBool("IsAttackPlayer", false);
                 }
@@ -78,6 +96,10 @@ public class ZombieController : MonoBehaviour
                 break;
 
             case State.DEAD:
+
+                animator.SetBool("isDead", true);
+                Destroy(this);
+                Destroy(gameObject, 1.0f);
 
                 break;
         }
@@ -90,8 +112,9 @@ public class ZombieController : MonoBehaviour
         rb.rotation = angle;
         direction.Normalize();
         movement = direction;
+        rb.velocity = movement * speed;
 
-        rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
+        //rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
     }
 
     private void OnTriggerEnter2D(Collider2D other)

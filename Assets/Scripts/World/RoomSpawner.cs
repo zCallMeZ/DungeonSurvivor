@@ -45,6 +45,10 @@ public class RoomSpawner : MonoBehaviour
     void Start()
     {
         roomIndex++;
+//        if ((int) openingDirection == 3)
+//        {
+//            
+//        }
     }
 
     void Update()

@@ -23,6 +23,16 @@ public class LevelGeneration : MonoBehaviour
    [SerializeField] private float minY;
    private bool stopLevelGeneration = false;
 
+   [SerializeField] private RoomIndex roomIndex;
+
+   enum RoomIndex : short
+   {
+      LR = 0,
+      LRB,
+      LRT,
+      LRBT
+   }
+
    private void Start()
    {
       int randStartingPos = Random.Range(0, startingPositions.Length);
@@ -54,7 +64,17 @@ public class LevelGeneration : MonoBehaviour
          if (transform.position.x < maxX)
          {
             Vector2 newPos = new Vector2(transform.position.x + moveAmountHorizontal, transform.position.y);
-            transform.position = newPos;            
+            transform.position = newPos;
+
+            direction = Random.Range(1, 6);
+            if (direction == 3)
+            {
+               direction = 2;
+            }
+            else if (direction == 4)
+            {
+               direction = directionDefault;
+            }
          }
          else
          {
@@ -67,7 +87,9 @@ public class LevelGeneration : MonoBehaviour
          if (transform.position.x > minX)
          {
             Vector2 newPos = new Vector2(transform.position.x - moveAmountHorizontal, transform.position.y);
-            transform.position = newPos;            
+            transform.position = newPos;
+
+            direction = Random.Range(3, 6);
          }
          else
          {
@@ -80,7 +102,9 @@ public class LevelGeneration : MonoBehaviour
          if (transform.position.y > minY)
          {
             Vector2 newPos = new Vector2(transform.position.x, transform.position.y - moveAmountVertical);
-            transform.position = newPos;            
+            transform.position = newPos;
+
+            direction = Random.Range(1, 6);
          }
          else
          {
@@ -89,6 +113,5 @@ public class LevelGeneration : MonoBehaviour
       }
 
       Instantiate(rooms[0], transform.position, Quaternion.identity);
-      direction = Random.Range(1, 6);
    }
 }

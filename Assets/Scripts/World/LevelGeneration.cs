@@ -12,6 +12,7 @@ public class LevelGeneration : MonoBehaviour
 
    private int direction;
    private int directionDefault = 5; // Move Down
+   private int randRoom;
 
    private float moveAmountHorizontal = 12f;
    private float moveAmountVertical = 10f;
@@ -22,6 +23,7 @@ public class LevelGeneration : MonoBehaviour
    [SerializeField] private float maxX;
    [SerializeField] private float minY;
    private bool stopLevelGeneration = false;
+   private bool canSpawn = true;
 
    [SerializeField] private RoomIndex roomIndex;
 
@@ -66,6 +68,9 @@ public class LevelGeneration : MonoBehaviour
             Vector2 newPos = new Vector2(transform.position.x + moveAmountHorizontal, transform.position.y);
             transform.position = newPos;
 
+            int randRoom = Random.Range(0, rooms.Length);
+            Instantiate(rooms[randRoom], transform.position, Quaternion.identity);
+
             direction = Random.Range(1, 6);
             if (direction == 3)
             {
@@ -88,6 +93,9 @@ public class LevelGeneration : MonoBehaviour
          {
             Vector2 newPos = new Vector2(transform.position.x - moveAmountHorizontal, transform.position.y);
             transform.position = newPos;
+            
+            int randRoom = Random.Range(0, 3);
+            Instantiate(rooms[randRoom], transform.position, Quaternion.identity);
 
             direction = Random.Range(3, 6);
          }
@@ -104,14 +112,24 @@ public class LevelGeneration : MonoBehaviour
             Vector2 newPos = new Vector2(transform.position.x, transform.position.y - moveAmountVertical);
             transform.position = newPos;
 
+            Instantiate(rooms[3], transform.position, Quaternion.identity);
+            
             direction = Random.Range(1, 6);
          }
          else
          {
             stopLevelGeneration = true;
          }
-      }
 
-      Instantiate(rooms[0], transform.position, Quaternion.identity);
+      } 
+      //Instantiate(rooms[randRoom], transform.position, Quaternion.identity);
+   }
+
+   private void OnTriggerEnter2D(Collider2D other)
+   {
+      if (other.gameObject.CompareTag("room"))
+      {
+         canSpawn = false;
+      }
    }
 }

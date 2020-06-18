@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2680559804865493855}
   - component: {fileID: 2680559804865493854}
+  - component: {fileID: 1449184529}
   m_Layer: 0
   m_Name: LevelGeneration
   m_TagString: Untagged
@@ -48,15 +49,47 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   rooms:
   - {fileID: 4909337442655690310, guid: eb79c4d8ba581c644a9e7711876cb6f6, type: 3}
   - {fileID: 6186676851737077835, guid: 8ab77cca42129644f8ffa60cd0b74178, type: 3}
+  - {fileID: 8713151072818298125, guid: b881118bfa049a544a4c3aa1f1a986d8, type: 3}
   - {fileID: 4958353817154814713, guid: 60290c7c708af7944bdbc30f5db42997, type: 3}
+  player: {fileID: 4737940133067839365, guid: 98da144f974e7a941bef890776a561d7, type: 3}
+  zombieClassic: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
+    type: 3}
+  zombieKamikaze: {fileID: 8120133638133753409, guid: abf9499fb92faa54c9b5c4be4e80926d,
+    type: 3}
   startTimeBtwRoom: 0.25
   minX: -4
-  maxX: 80
-  minY: -55
+  maxX: 32
+  minY: -15
+  roomIndex: 0
+  room:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!61 &1449184529
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2680559804865493853}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5, y: 5}
+  m_EdgeRadius: 0

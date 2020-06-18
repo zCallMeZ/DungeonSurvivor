@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class RoomType : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int type;
 
-    // Update is called once per frame
-    void Update()
+    public void RoomDestruction()
     {
-        
+        Destroy(gameObject);
     }
 }

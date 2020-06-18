@@ -10,6 +10,10 @@ public class LevelGeneration : MonoBehaviour
    [SerializeField] private Transform[] startingPositions;
    [SerializeField] private GameObject [] rooms;
 
+   [SerializeField] private Transform player;
+   [SerializeField] private GameObject zombieClassic;
+   [SerializeField] private GameObject zombieKamikaze;
+
    private int direction;
    private int directionDefault = 5; // Move Down
    private int randRoom;
@@ -26,6 +30,7 @@ public class LevelGeneration : MonoBehaviour
    private bool canSpawn = true;
 
    [SerializeField] private RoomIndex roomIndex;
+   public LayerMask room;
 
    enum RoomIndex : short
    {
@@ -40,7 +45,7 @@ public class LevelGeneration : MonoBehaviour
       int randStartingPos = Random.Range(0, startingPositions.Length);
       transform.position = startingPositions[randStartingPos].position;
       Instantiate(rooms[0], transform.position, Quaternion.identity);
-      
+      player.position = startingPositions[randStartingPos].position;
       direction = Random.Range(1, 6);
    }
 
@@ -70,6 +75,7 @@ public class LevelGeneration : MonoBehaviour
 
             int randRoom = Random.Range(0, rooms.Length);
             Instantiate(rooms[randRoom], transform.position, Quaternion.identity);
+            SpawnEnnemy();
 
             direction = Random.Range(1, 6);
             if (direction == 3)
@@ -96,6 +102,7 @@ public class LevelGeneration : MonoBehaviour
             
             int randRoom = Random.Range(0, 3);
             Instantiate(rooms[randRoom], transform.position, Quaternion.identity);
+            SpawnEnnemy();
 
             direction = Random.Range(3, 6);
          }
@@ -109,10 +116,12 @@ public class LevelGeneration : MonoBehaviour
       {
          if (transform.position.y > minY)
          {
+
             Vector2 newPos = new Vector2(transform.position.x, transform.position.y - moveAmountVertical);
             transform.position = newPos;
 
-            Instantiate(rooms[3], transform.position, Quaternion.identity);
+            Instantiate(rooms[1], transform.position, Quaternion.identity);
+            SpawnEnnemy();
             
             direction = Random.Range(1, 6);
          }
@@ -121,8 +130,20 @@ public class LevelGeneration : MonoBehaviour
             stopLevelGeneration = true;
          }
 
-      } 
-      //Instantiate(rooms[randRoom], transform.position, Quaternion.identity);
+      }
+   }
+   
+   void SpawnEnnemy()
+   {
+      int rand = Random.Range(0, 3);
+      if (rand == 0)
+      {
+         Instantiate(zombieKamikaze, transform.position, Quaternion.identity);
+      }
+      else
+      {
+         Instantiate(zombieClassic, transform.position, Quaternion.identity);
+      }
    }
 
    private void OnTriggerEnter2D(Collider2D other)

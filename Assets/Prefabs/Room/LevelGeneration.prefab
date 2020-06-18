@@ -54,7 +54,7 @@ MonoBehaviour:
   - {fileID: 6186676851737077835, guid: 8ab77cca42129644f8ffa60cd0b74178, type: 3}
   - {fileID: 8713151072818298125, guid: b881118bfa049a544a4c3aa1f1a986d8, type: 3}
   - {fileID: 4958353817154814713, guid: 60290c7c708af7944bdbc30f5db42997, type: 3}
-  player: {fileID: 4737940133067839365, guid: 98da144f974e7a941bef890776a561d7, type: 3}
+  player: {fileID: 0}
   zombieClassic: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
     type: 3}
   zombieKamikaze: {fileID: 8120133638133753409, guid: abf9499fb92faa54c9b5c4be4e80926d,

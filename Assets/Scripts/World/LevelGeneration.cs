@@ -116,7 +116,18 @@ public class LevelGeneration : MonoBehaviour
       {
          if (transform.position.y > minY)
          {
+            Collider2D roomDetection = Physics2D.OverlapCircle(transform.position, 1, room);
+            if (roomDetection.GetComponent<RoomType>().type != 1)
+            {
+               int randBottomRoom = Random.Range(1, 4);
+               if (randBottomRoom == 2)
+               {
+                  randBottomRoom = 1;
+               }
 
+               Instantiate(rooms[randBottomRoom], transform.position, Quaternion.identity);
+            }
+            
             Vector2 newPos = new Vector2(transform.position.x, transform.position.y - moveAmountVertical);
             transform.position = newPos;
 

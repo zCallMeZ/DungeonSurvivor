@@ -34,7 +34,9 @@
             </e>
             <e p="Astar.cs" t="Include" />
             <e p="LevelGeneration.cs" t="Include" />
-            <e p="RoomSpawner.cs" t="Include" />
+            <e p="Test" t="Include">
+              <e p="RoomSpawner.cs" t="Include" />
+            </e>
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1594612100575377608}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: obstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7725689064317321390}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: EnnemySpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 2201916801265630746}
   - component: {fileID: 1318901880501415760}
   - component: {fileID: 6511827956269898314}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: tiles_10 (3)
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4734531036688466728}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: HealthSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5874743960901501145}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: spawn1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 1191447315603218330}
   - component: {fileID: 1390195018893274488}
   - component: {fileID: 4221862693358341784}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: tiles_11 (2)
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 47408207500402132}
   - component: {fileID: 3922796968425319176}
   - component: {fileID: 5384406345491019130}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,7 +471,7 @@ GameObject:
   - component: {fileID: 2774572895946820294}
   - component: {fileID: 2987182138891062809}
   - component: {fileID: 4019847171141612017}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SpawnPointR (1)
   m_TagString: spawnPoint
   m_Icon: {fileID: 0}
@@ -582,7 +582,7 @@ GameObject:
   - component: {fileID: 2413571113069373638}
   - component: {fileID: 8008263944914028577}
   - component: {fileID: 5888425196099653675}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: tiles_10 (2)
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -691,7 +691,7 @@ GameObject:
   - component: {fileID: 8955293448363125766}
   - component: {fileID: 5605855973181997595}
   - component: {fileID: 408067732509514854}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: tiles_11
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -801,7 +801,7 @@ GameObject:
   - component: {fileID: 8643037152133514936}
   - component: {fileID: 4938724854510457189}
   - component: {fileID: 5947797505175603070}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SpawnPointL (1)
   m_TagString: spawnPoint
   m_Icon: {fileID: 0}
@@ -912,7 +912,7 @@ GameObject:
   - component: {fileID: 4359345648588154929}
   - component: {fileID: 4768489374746695477}
   - component: {fileID: 2332623018579991548}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: tiles_10 (1)
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -1019,7 +1019,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4171460170008845622}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: spawn1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1051,7 +1051,7 @@ GameObject:
   - component: {fileID: 2775881846711575000}
   - component: {fileID: 2560837189434009102}
   - component: {fileID: 1301663302692696155}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 00 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1159,7 +1159,7 @@ GameObject:
   - component: {fileID: 2491052617441702523}
   - component: {fileID: 2730899980520717012}
   - component: {fileID: 9168987895850955470}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: tiles_11 (1)
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -1266,7 +1266,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5969680569828134387}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: spawn1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1298,7 +1298,7 @@ GameObject:
   - component: {fileID: 4909337441955720733}
   - component: {fileID: 4909337441955720930}
   - component: {fileID: 701484287015937574}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Square (2)
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -1407,7 +1407,7 @@ GameObject:
   - component: {fileID: 4909337442540425855}
   - component: {fileID: 4909337442540425852}
   - component: {fileID: 1727665774589041492}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Square
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -1515,7 +1515,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4909337442655690311}
   - component: {fileID: -606989652051134583}
-  m_Layer: 0
+  - component: {fileID: -6196487731896119611}
+  m_Layer: 13
   m_Name: LR
   m_TagString: room
   m_Icon: {fileID: 0}
@@ -1555,6 +1556,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5768f75a64775f541b4b1738a185ea5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
+--- !u!61 &-6196487731896119611
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4909337442655690310}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &4909337442779611249
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,7 +1594,7 @@ GameObject:
   - component: {fileID: 4909337442779611254}
   - component: {fileID: 4909337442779611255}
   - component: {fileID: 3387583057965608915}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Square (1)
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -1675,7 +1703,7 @@ GameObject:
   - component: {fileID: 4909337442866935284}
   - component: {fileID: 4909337442866935290}
   - component: {fileID: 6784132065791140511}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Square (8)
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -1782,7 +1810,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4909337442936435706}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: walls
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -1824,7 +1852,7 @@ GameObject:
   - component: {fileID: 4909337443068890000}
   - component: {fileID: 4909337443068890006}
   - component: {fileID: 4258583935251238880}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Square (10)
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -1933,7 +1961,7 @@ GameObject:
   - component: {fileID: 4909337443212887777}
   - component: {fileID: 4909337443212887782}
   - component: {fileID: 4055534028488643355}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Square (3)
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -2042,7 +2070,7 @@ GameObject:
   - component: {fileID: 4909337443896835355}
   - component: {fileID: 4909337443896835353}
   - component: {fileID: 8887178652101400159}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Square (9)
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -2151,7 +2179,7 @@ GameObject:
   - component: {fileID: 4909337443993934667}
   - component: {fileID: 4909337443993934665}
   - component: {fileID: 7320868299154985644}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Square (11)
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -2260,7 +2288,7 @@ GameObject:
   - component: {fileID: 4273316339360272051}
   - component: {fileID: 3255497322916916811}
   - component: {fileID: 5683053423755708676}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 00 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2366,7 +2394,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1890431714731699080}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2407,7 +2435,7 @@ GameObject:
   - component: {fileID: 2744483442560988340}
   - component: {fileID: 6254218755219873004}
   - component: {fileID: 4655811796824945882}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 00 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2513,7 +2541,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8178928860333948034}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: spawn1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2545,7 +2573,7 @@ GameObject:
   - component: {fileID: 2561414664610177168}
   - component: {fileID: 8407605560266162934}
   - component: {fileID: 8918373118951954623}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Square (5)
   m_TagString: wall
   m_Icon: {fileID: 0}
@@ -2654,7 +2682,7 @@ GameObject:
   - component: {fileID: 7142453408114748422}
   - component: {fileID: 3890854680907021482}
   - component: {fileID: 2564834559277597208}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 00 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2762,7 +2790,7 @@ GameObject:
   - component: {fileID: 4246998339608246582}
   - component: {fileID: 6379062533494325324}
   - component: {fileID: 6476727066877457923}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: tiles_10 (4)
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -2871,7 +2899,7 @@ GameObject:
   - component: {fileID: 5225235589559339042}
   - component: {fileID: 7742079701323573291}
   - component: {fileID: 4779064493197708646}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 00 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2979,7 +3007,7 @@ GameObject:
   - component: {fileID: 1682486059883554336}
   - component: {fileID: 2142892482177934638}
   - component: {fileID: 3072961116279561791}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: tiles_10
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -3088,7 +3116,7 @@ GameObject:
   - component: {fileID: 2011844581152403354}
   - component: {fileID: 7826046520584419893}
   - component: {fileID: 6971056875210233401}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 00 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3196,7 +3224,7 @@ GameObject:
   - component: {fileID: 7726747824570485961}
   - component: {fileID: 819346383108259967}
   - component: {fileID: 4789691308896542151}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: tiles_10 (5)
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -3305,7 +3333,7 @@ GameObject:
   - component: {fileID: 7422886477014039935}
   - component: {fileID: 6105453313530526422}
   - component: {fileID: 3843817951630552287}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 00 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3411,7 +3439,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4273798785302507132}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: spawn1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3443,7 +3471,7 @@ GameObject:
   - component: {fileID: 3370026357177089140}
   - component: {fileID: 499055275069375719}
   - component: {fileID: 5034891120655067992}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Square (4)
   m_TagString: wall
   m_Icon: {fileID: 0}

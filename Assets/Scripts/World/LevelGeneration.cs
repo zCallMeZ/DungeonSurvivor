@@ -27,7 +27,7 @@ public class LevelGeneration : MonoBehaviour
    [SerializeField] private float minX;
    [SerializeField] private float maxX;
    [SerializeField] private float minY;
-   private bool stopLevelGeneration = false;
+   public bool stopLevelGeneration = false;
    private bool canSpawn = true;
 
    [SerializeField] private RoomIndex roomIndex;

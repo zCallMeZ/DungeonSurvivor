@@ -15,6 +15,9 @@ public class LevelGeneration : MonoBehaviour
    [SerializeField] private GameObject zombieClassic;
    [SerializeField] private GameObject zombieKamikaze;
 
+   [SerializeField] private Transform[] boxPos;
+   [SerializeField] private GameObject winBox;
+   
    private int direction;
    private int directionDefault = 5; // Move Down
    private int randRoom;
@@ -50,6 +53,9 @@ public class LevelGeneration : MonoBehaviour
       Instantiate(rooms[0], transform.position, Quaternion.identity);
       player.position = startingPositions[randStartingPos].position;
       direction = Random.Range(1, 6);
+      
+      int randBoxPos = Random.Range(1, 4);
+      Instantiate(winBox, boxPos[randBoxPos].transform.position, Quaternion.identity);
    }
 
    private void Update()
@@ -145,7 +151,6 @@ public class LevelGeneration : MonoBehaviour
                   }
 
                   Instantiate(rooms[randBottomRoom], transform.position, Quaternion.identity);
-
                }
             }
 

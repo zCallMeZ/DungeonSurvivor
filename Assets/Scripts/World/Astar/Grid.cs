@@ -17,20 +17,26 @@ public class Grid : MonoBehaviour
 		nodeDiameter = nodeRadius * 2;
 		gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
 		gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
-		CreateGrid();
+        StartCoroutine(Delay());
 	}
 
-	void CreateGrid()
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(3.5f);
+        CreateGrid();
+    }
+
+	public void CreateGrid()
 	{
 		grid = new Node[gridSizeX, gridSizeY];
-		Vector3 worldBottomLeft = transform.position - Vector3.right * gridWorldSize.x / 2 - Vector3.forward * gridWorldSize.y / 2;
+		Vector2 worldBottomLeft = (Vector2)transform.position - Vector2.right * gridWorldSize.x / 2 - Vector2.up * gridWorldSize.y / 2;
 
 		for (int x = 0; x < gridSizeX; x++)
 		{
 			for (int y = 0; y < gridSizeY; y++)
 			{
-				Vector3 worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter + nodeRadius);
-				bool walkable = !(Physics.CheckSphere(worldPoint, nodeRadius, unwalkableMask));
+				Vector2 worldPoint = worldBottomLeft + Vector2.right * (x * nodeDiameter + nodeRadius) + Vector2.up * (y * nodeDiameter + nodeRadius);
+				bool walkable = !(Physics2D.OverlapCircle(worldPoint, nodeRadius - 0.1f, unwalkableMask));
 				grid[x, y] = new Node(walkable, worldPoint, x, y);
 			}
 		}
@@ -76,7 +82,7 @@ public class Grid : MonoBehaviour
 	public List<Node> path;
 	void OnDrawGizmos()
 	{
-		Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, 1, gridWorldSize.y));
+		Gizmos.DrawWireCube(transform.position, new Vector2(gridWorldSize.x, gridWorldSize.y));
 
 		if (grid != null)
 		{
@@ -86,7 +92,7 @@ public class Grid : MonoBehaviour
 				if (path != null)
 					if (path.Contains(n))
 						Gizmos.color = Color.black;
-				Gizmos.DrawCube(n.worldPos, Vector3.one * (nodeDiameter - .1f));
+				Gizmos.DrawWireSphere(n.worldPos, nodeRadius - 0.1f);
 			}
 		}
 	}

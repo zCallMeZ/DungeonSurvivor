@@ -48,14 +48,14 @@ public class LevelGeneration : MonoBehaviour
 
    private void Start()
    {
-      int randStartingPos = Random.Range(0, startingPositions.Length);
-      transform.position = startingPositions[randStartingPos].position;
-      Instantiate(rooms[0], transform.position, Quaternion.identity);
-      player.position = startingPositions[randStartingPos].position;
-      direction = Random.Range(1, 6);
+       int randStartingPos = Random.Range(0, startingPositions.Length);
+       transform.position = startingPositions[randStartingPos].position;
+       Instantiate(rooms[0], transform.position, Quaternion.identity);
+       player.position = startingPositions[randStartingPos].position;
+       direction = Random.Range(1, 6);
       
-      int randBoxPos = Random.Range(1, 4);
-      Instantiate(winBox, boxPos[randBoxPos].transform.position, Quaternion.identity);
+       int randBoxPos = Random.Range(1, 4);
+       Instantiate(winBox, boxPos[randBoxPos].transform.position, Quaternion.identity);
    }
 
    private void Update()
@@ -165,6 +165,7 @@ public class LevelGeneration : MonoBehaviour
          else
          {
             stopLevelGeneration = true;
+
          }
 
       }

@@ -17,9 +17,9 @@ public class Pathfinding : MonoBehaviour
 		FindPath(seeker.position, target.position);
 	}
 
-	void FindPath(Vector3 startPos, Vector3 targetPos)
+	void FindPath(Vector2 seekerPos, Vector2 targetPos)
 	{
-		Node startNode = grid.NodeFromWorldPoint(startPos);
+		Node startNode = grid.NodeFromWorldPoint(seekerPos);
 		Node targetNode = grid.NodeFromWorldPoint(targetPos);
 
 		List<Node> openSet = new List<Node>();
@@ -86,11 +86,11 @@ public class Pathfinding : MonoBehaviour
 
 	int GetDistance(Node nodeA, Node nodeB)
 	{
-		int dstX = Mathf.Abs(nodeA.gridX - nodeB.gridX);
-		int dstY = Mathf.Abs(nodeA.gridY - nodeB.gridY);
+		int distanceX = Mathf.Abs(nodeA.gridX - nodeB.gridX);
+		int distanceY = Mathf.Abs(nodeA.gridY - nodeB.gridY);
 
-		if (dstX > dstY)
-			return 14 * dstY + 10 * (dstX - dstY);
-		return 14 * dstX + 10 * (dstY - dstX);
+		if (distanceX > distanceY)
+			return 14 * distanceY + 10 * (distanceX - distanceY);
+		return 14 * distanceX + 10 * (distanceY - distanceX);
 	}
 }

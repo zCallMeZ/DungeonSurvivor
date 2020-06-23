@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class ZombieKamikazeController : MonoBehaviour
 {
-    [SerializeField] Transform player;
+    Transform player;
     [SerializeField] float speed = 4f;
 
+    ZombieHealth zombieHealth;
     Rigidbody2D rb;
     Animator animator;
 
@@ -31,15 +32,21 @@ public class ZombieKamikazeController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         initialPosition = transform.position;
+        player = FindObjectOfType<PlayerController>().transform;
+        zombieHealth = GetComponent<ZombieHealth>();
     }
 
     void Update()
     {
+        if (!zombieHealth.IsAlive())
+        {
+            state = State.DEAD;
+        }
         switch (state)
         {
             case State.IDLE:
 
-                transform.position = initialPosition;
+                //transform.position = initialPosition;
 
                 if (isFollowingPlayer)
                 {
@@ -54,6 +61,7 @@ public class ZombieKamikazeController : MonoBehaviour
 
                 if (!isFollowingPlayer)
                 {
+                    rb.velocity = Vector2.zero;
                     state = State.IDLE;
                 }
 
@@ -66,9 +74,19 @@ public class ZombieKamikazeController : MonoBehaviour
 
             case State.ATTACK:
 
+                moveCharacter();
+
+                animator.SetBool("IsAttackPlayer", true);
+                Destroy(this);
+                Destroy(gameObject, 1.0f);
+
                 break;
 
             case State.DEAD:
+
+                animator.SetBool("isDead", true);
+                Destroy(this);
+                Destroy(gameObject, 1.0f);
 
                 break;
         }
@@ -81,8 +99,9 @@ public class ZombieKamikazeController : MonoBehaviour
         rb.rotation = angle;
         direction.Normalize();
         movement = direction;
+        rb.velocity = movement * speed;
 
-        rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
+        //rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

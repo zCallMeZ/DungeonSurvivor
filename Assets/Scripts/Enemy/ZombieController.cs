@@ -8,7 +8,6 @@ public class ZombieController : MonoBehaviour
     private SpriteRenderer colorZombieState;
 
     ZombieHealth zombieHealth;
-
     Rigidbody2D rb;
     Animator animator;
 
@@ -49,9 +48,7 @@ public class ZombieController : MonoBehaviour
         {
             case State.IDLE:
 
-                //transform.position = initialPosition;
                 colorZombieState.color = Color.white;
-                
 
                 if (isFollowingPlayer)
                 {
@@ -113,8 +110,6 @@ public class ZombieController : MonoBehaviour
         direction.Normalize();
         movement = direction;
         rb.velocity = movement * speed;
-
-        //rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
     }
 
     private void OnTriggerEnter2D(Collider2D other)

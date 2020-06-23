@@ -8,11 +8,8 @@ public class ZombieHealth : MonoBehaviour
     [SerializeField] private float curHealth = 3f;
     private float takeDmg = 1f;
 
-    Animator animator;
-
     private void Start()
     {
-        animator = GetComponent<Animator>();
         healthMax = curHealth;
     }
 

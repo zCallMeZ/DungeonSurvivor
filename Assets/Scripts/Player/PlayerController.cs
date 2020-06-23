@@ -26,8 +26,8 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = movement * speed;
             
-        Vector2 lookDir = mousePos - (Vector2)transform.position;
+        Vector2 lookDir = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg; 
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        rb.rotation = angle; 
     }
 }

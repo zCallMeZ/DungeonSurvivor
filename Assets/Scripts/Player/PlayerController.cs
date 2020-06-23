@@ -24,10 +24,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime); 
+        rb.velocity = movement * speed;
             
-        Vector2 lookDir = mousePos - rb.position;
+        Vector2 lookDir = mousePos - (Vector2)transform.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg; 
-        rb.rotation = angle; 
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 }

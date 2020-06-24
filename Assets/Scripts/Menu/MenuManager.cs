@@ -13,7 +13,7 @@ public class MenuManager : MonoBehaviour
     private const int activatePanel = 0;
     private const int desactivatePanel = 1;
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {

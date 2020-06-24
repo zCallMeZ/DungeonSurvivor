@@ -5,6 +5,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+//TODO enlever les variables public + Mettre des commentaires + Enlever les using non utilisés
 
 public class LevelGeneration : MonoBehaviour
 {
@@ -22,10 +23,10 @@ public class LevelGeneration : MonoBehaviour
    private int directionDefault = 5; // Move Down
    private int randRoom;
 
-   private float moveAmountHorizontal = 12f;
-   private float moveAmountVertical = 10f;
+   private float moveAmountHorizontal = 12.0f;
+   private float moveAmountVertical = 10.0f;
    private float timeBtwRoom;
-   [SerializeField] float startTimeBtwRoom = 0.25f;
+   [SerializeField] private float startTimeBtwRoom = 0.25f;
 
    [SerializeField] private float minX;
    [SerializeField] private float maxX;
@@ -170,8 +171,8 @@ public class LevelGeneration : MonoBehaviour
 
       }
    }
-   
-   void SpawnEnnemy()
+
+    private void SpawnEnnemy()
    {
       int rand = Random.Range(0, 3);
       if (rand == 0)

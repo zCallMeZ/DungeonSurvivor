@@ -2,51 +2,57 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//TODO Mettre des commentaires + Attention nombres magiques
+
 public class ZombieKamikazeController : MonoBehaviour
 {
-    Transform player;
-    [SerializeField] float speed = 4f;
+    [SerializeField] private float speed = 4.0f;
 
-    ZombieHealth zombieHealth;
-    Rigidbody2D rb;
-    Animator animator;
+    private Transform player;
+    private ZombieHealth zombieHealth;
+    private Rigidbody2D rb;
+    private Animator animator;
+    private Pathfinding pathfinding;
 
-    Vector2 movement;
-    Vector3 initialPosition;
+    private Vector2 movement;
 
-    bool isAttack = false;
-    bool isFollowingPlayer = false;
+    private Vector3 target;
+    private Vector3 initialPosition;
+
+    private bool isAttack = false;
+    private bool isFollowingPlayer = false;
 
     enum State
     {
         IDLE,
         FOLLOW,
+        RETURN_INITIALPOSITION,
         ATTACK,
         DEAD
     }
 
     State state = State.IDLE;
 
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         initialPosition = transform.position;
         player = FindObjectOfType<PlayerController>().transform;
         zombieHealth = GetComponent<ZombieHealth>();
+        pathfinding = FindObjectOfType<Pathfinding>();
     }
 
-    void Update()
+    private void Update()
     {
         if (!zombieHealth.IsAlive())
         {
             state = State.DEAD;
         }
+
         switch (state)
         {
             case State.IDLE:
-
-                //transform.position = initialPosition;
 
                 if (isFollowingPlayer)
                 {
@@ -57,26 +63,47 @@ public class ZombieKamikazeController : MonoBehaviour
 
             case State.FOLLOW:
 
-                moveCharacter();
-
-                if (!isFollowingPlayer)
                 {
-                    rb.velocity = Vector2.zero;
-                    state = State.IDLE;
+                    List<Node> path = pathfinding.FindPath(transform.position, player.position);
+                    if (path != null)
+                    {
+                        target = path[0].worldPos;
+                        MoveCharacter();
+                    }
+
+                    if (!isFollowingPlayer)
+                    {
+                        rb.velocity = Vector2.zero;
+                        state = State.IDLE;
+                    }
+
+                    if (isAttack)
+                    {
+                        state = State.ATTACK;
+                    }
                 }
 
-                if (isAttack)
+                break;
+
+            case State.RETURN_INITIALPOSITION:
+
                 {
-                    state = State.ATTACK;
+                    List<Node> path = pathfinding.FindPath(transform.position, initialPosition);
+                    if (path != null)
+                    {
+                        target = path[0].worldPos;
+                        MoveCharacter();
+                    }
                 }
 
                 break;
 
             case State.ATTACK:
 
-                moveCharacter();
+                MoveCharacter();
 
                 animator.SetBool("IsAttackPlayer", true);
+
                 Destroy(this);
                 Destroy(gameObject, 1.0f);
 
@@ -85,6 +112,7 @@ public class ZombieKamikazeController : MonoBehaviour
             case State.DEAD:
 
                 animator.SetBool("isDead", true);
+
                 Destroy(this);
                 Destroy(gameObject, 1.0f);
 
@@ -92,16 +120,14 @@ public class ZombieKamikazeController : MonoBehaviour
         }
     }
 
-    private void moveCharacter()
+    private void MoveCharacter()
     {
-        Vector2 direction = player.position - transform.position;
+        Vector2 direction = target - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 270;
         rb.rotation = angle;
         direction.Normalize();
         movement = direction;
         rb.velocity = movement * speed;
-
-        //rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

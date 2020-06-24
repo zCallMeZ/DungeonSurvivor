@@ -1,18 +1,23 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
+
+//TODO Mettre des commentaires + Ranger le code + Attention nombres magiques
 
 public class ZombieController : MonoBehaviour
 {
-    Transform player;
-    [SerializeField] private float speed = 3f;
+    [SerializeField] private float speed = 3.0f;
 
+    private Transform player;
     private SpriteRenderer colorZombieState;
+    private ZombieHealth zombieHealth;
+    private Rigidbody2D rb;
+    private Animator animator;
+    private Pathfinding pathfinding;
 
-    ZombieHealth zombieHealth;
-    Rigidbody2D rb;
-    Animator animator;
+    private Vector2 movement;
 
-    Vector2 movement;
-    Vector3 initialPosition;
+    private Vector3 target;
+    private Vector3 initialPosition;
 
     private bool isAttack = false;
     private bool isFollowingPlayer = false;
@@ -20,8 +25,8 @@ public class ZombieController : MonoBehaviour
     enum State
     {
         IDLE,
-        RETURN_IDLE,
         FOLLOW,
+        RETURN_INITIALPOSITION,
         ATTACK,
         DEAD,
     }
@@ -36,6 +41,7 @@ public class ZombieController : MonoBehaviour
         initialPosition = transform.position;
         player = FindObjectOfType<PlayerController>().transform;
         zombieHealth = GetComponent<ZombieHealth>();
+        pathfinding = FindObjectOfType<Pathfinding>();
     }
 
     private void Update()
@@ -58,19 +64,39 @@ public class ZombieController : MonoBehaviour
 
             case State.FOLLOW:
 
-                colorZombieState.color = Color.red;
-
-                moveCharacter();
-
-                if (!isFollowingPlayer)
                 {
-                    rb.velocity = Vector2.zero;
-                    state = State.IDLE;
+                    colorZombieState.color = Color.red;
+
+                    List<Node> path = pathfinding.FindPath(transform.position, player.position);
+                    if (path != null)
+                    {
+                        target = path[0].worldPos;
+                        MoveCharacter();
+                    }
+
+                    if (!isFollowingPlayer)
+                    {
+                        rb.velocity = Vector2.zero;
+                        state = State.IDLE;
+                    }
+
+                    if (isAttack)
+                    {
+                        state = State.ATTACK;
+                    }
                 }
 
-                if (isAttack)
+                break;
+
+            case State.RETURN_INITIALPOSITION:
+
                 {
-                    state = State.ATTACK;
+                    List<Node> path = pathfinding.FindPath(transform.position, initialPosition);
+                    if (path != null)
+                    {
+                        target = path[0].worldPos;
+                        MoveCharacter();
+                    }
                 }
 
                 break;
@@ -79,7 +105,7 @@ public class ZombieController : MonoBehaviour
 
                 colorZombieState.color = Color.blue;
 
-                moveCharacter();
+                MoveCharacter();
 
                 animator.SetBool("IsAttackPlayer", true);
 
@@ -102,9 +128,9 @@ public class ZombieController : MonoBehaviour
         }
     }
 
-    private void moveCharacter()
+    private void MoveCharacter()
     {
-        Vector2 direction = player.position - transform.position;
+        Vector2 direction = target - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 270;
         rb.rotation = angle;
         direction.Normalize();

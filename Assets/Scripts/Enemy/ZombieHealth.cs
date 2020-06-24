@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//TODO Mettre des commentaires + Enlever les using non utilisés
+
 public class ZombieHealth : MonoBehaviour
 {
+    [SerializeField] private float curHealth = 3.0f;
     private float healthMax;
-    [SerializeField] private float curHealth = 3f;
-    private float takeDmg = 1f;
+    private float takeDmg = 1.0f;
 
     private void Start()
     {

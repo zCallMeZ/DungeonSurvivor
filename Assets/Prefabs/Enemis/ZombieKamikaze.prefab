@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3678103425647027332}
   - component: {fileID: 8670167615109908567}
   - component: {fileID: 226778034318269199}
-  - component: {fileID: 91142247}
+  - component: {fileID: 2025835500159035603}
   m_Layer: 8
   m_Name: ZombieKamikaze
   m_TagString: Zombie2
@@ -152,7 +152,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &91142247
+--- !u!58 &2025835500159035603
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,6 +165,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.08515763}
+  m_Offset: {x: -0.012374878, y: 0.13710523}
   serializedVersion: 2
-  m_Radius: 0.32925677
+  m_Radius: 0.20684433

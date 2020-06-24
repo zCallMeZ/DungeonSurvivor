@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//TODO Mettre des commentaires
+
 public class Grid : MonoBehaviour
 {
-	public LayerMask unwalkableMask;
-	public Vector2 gridWorldSize;
-	public float nodeRadius;
-	Node[,] grid;
+	[SerializeField] private LayerMask unwalkableMask;
+	[SerializeField] private Vector2 gridWorldSize;
+	[SerializeField] private float nodeRadius;
 
-	float nodeDiameter;
-	int gridSizeX, gridSizeY;
+	private Node[,] grid;
+	private List<Node> path;
 
-	void Awake()
+	private float nodeDiameter;
+	private int gridSizeX, gridSizeY;
+
+	private void Awake()
 	{
 		nodeDiameter = nodeRadius * 2;
 		gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
@@ -20,7 +24,7 @@ public class Grid : MonoBehaviour
         StartCoroutine(Delay());
 	}
 
-    IEnumerator Delay()
+    private IEnumerator Delay()
     {
         yield return new WaitForSeconds(3.5f);
         CreateGrid();
@@ -29,7 +33,7 @@ public class Grid : MonoBehaviour
 	public void CreateGrid()
 	{
 		grid = new Node[gridSizeX, gridSizeY];
-		Vector2 worldBottomLeft = (Vector2)transform.position - Vector2.right * gridWorldSize.x / 2 - Vector2.up * gridWorldSize.y / 2;
+		Vector2 worldBottomLeft = (Vector2)transform.position - Vector2.right * gridWorldSize.x / 2.0f - Vector2.up * gridWorldSize.y / 2.0f;
 
 		for (int x = 0; x < gridSizeX; x++)
 		{
@@ -62,15 +66,13 @@ public class Grid : MonoBehaviour
 				}
 			}
 		}
-
 		return neighbours;
 	}
 
-
 	public Node NodeFromWorldPoint(Vector3 worldPosition)
 	{
-		float percentX = (worldPosition.x + gridWorldSize.x / 2) / gridWorldSize.x;
-		float percentY = (worldPosition.z + gridWorldSize.y / 2) / gridWorldSize.y;
+		float percentX = (worldPosition.x + 10.0f ) / gridWorldSize.x;
+		float percentY = (worldPosition.y + 20.0f ) / gridWorldSize.y;
 		percentX = Mathf.Clamp01(percentX);
 		percentY = Mathf.Clamp01(percentY);
 
@@ -79,8 +81,7 @@ public class Grid : MonoBehaviour
 		return grid[x, y];
 	}
 
-	public List<Node> path;
-	void OnDrawGizmos()
+	private void OnDrawGizmos()
 	{
 		Gizmos.DrawWireCube(transform.position, new Vector2(gridWorldSize.x, gridWorldSize.y));
 

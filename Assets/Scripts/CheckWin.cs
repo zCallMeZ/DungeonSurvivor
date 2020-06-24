@@ -9,14 +9,15 @@ public class CheckWin : MonoBehaviour
 
     [SerializeField] private GameObject panelWin;
 
-    void Update()
+    private void Update()
     {
         if (canWin)
         {
             panelWin.SetActive(true);
         }
     }
-    void OnTriggerEnter2D(Collider2D other)
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("chest"))
         {
@@ -28,7 +29,6 @@ public class CheckWin : MonoBehaviour
     {
         if(isOpen)
         {
-
             if (collision.gameObject.CompareTag("chest")) 
             {
                 canWin = true;

@@ -1,24 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    [SerializeField] private float speed = 1f;
+    [SerializeField] private float speed = 1.0f;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
 
-    private float bulletForce = 15f;
+    private float bulletForce = 15.0f;
     private float fireRate = 0.5f;
     private float nextFire;
 
     //[SerializeField] AudioSource bulletSound;
-    void Start()
+    private void Start()
     {
         nextFire = Time.time;
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetMouseButton(0))
         {

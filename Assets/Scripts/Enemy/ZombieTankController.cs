@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using UnityEngine;
 
+//TODO Mettre des commentaires + Enlever les using non utilisés + Ranger le code
+
 public class ZombieTankController : MonoBehaviour
 {
     [SerializeField] private Transform point1;
@@ -17,7 +19,7 @@ public class ZombieTankController : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 movement;
-    [SerializeField] private float speed = 3f;
+    [SerializeField] private float speed = 3.0f;
     private Vector3 direction;
 
     void Start()
@@ -55,15 +57,15 @@ public class ZombieTankController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        moveCharacter(movement);
+        MoveCharacter(movement);
     }
 
-    void moveCharacter(Vector2 direction)
+    private void MoveCharacter(Vector2 direction)
     {
         rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
     }
 
-    void Movement()
+    private void Movement()
     {
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 270;
         rb.rotation = angle;
@@ -71,7 +73,7 @@ public class ZombieTankController : MonoBehaviour
         movement = direction;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("point1"))
         {

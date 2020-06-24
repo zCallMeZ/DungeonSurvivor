@@ -217,7 +217,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &113051149
 MonoBehaviour:
@@ -289,7 +289,7 @@ PrefabInstance:
     - target: {fileID: 2548767603557260310, guid: 20e6612e53677a941955280605a1e28c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2548767603557260310, guid: 20e6612e53677a941955280605a1e28c,
         type: 3}
@@ -324,6 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1423272346}
   - component: {fileID: 1423272345}
+  - component: {fileID: 1423272347}
   m_Layer: 0
   m_Name: A*
   m_TagString: Untagged
@@ -343,8 +344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c626bb2516e31ef4da1e5c56dce74de3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seeker: {fileID: 3308571316649898206, guid: 0aeda856c09efac4983d717a70a64678, type: 3}
-  target: {fileID: 4737940133067839384, guid: 98da144f974e7a941bef890776a561d7, type: 3}
 --- !u!4 &1423272346
 Transform:
   m_ObjectHideFlags: 0
@@ -359,30 +358,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1510399141
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1510399143}
-  - component: {fileID: 1510399142}
-  m_Layer: 0
-  m_Name: Grid
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1510399142
+--- !u!114 &1423272347
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510399141}
+  m_GameObject: {fileID: 1423272344}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20551b05ed0288044a1af6989a9ac711, type: 3}
@@ -393,20 +375,6 @@ MonoBehaviour:
     m_Bits: 16384
   gridWorldSize: {x: 48, y: 40}
   nodeRadius: 0.5
---- !u!4 &1510399143
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510399141}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14, y: 0, z: -21.316406}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1638448137 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8234442345231385636, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
@@ -468,7 +436,7 @@ PrefabInstance:
     - target: {fileID: 4737940133067839384, guid: 98da144f974e7a941bef890776a561d7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4737940133067839384, guid: 98da144f974e7a941bef890776a561d7,
         type: 3}
@@ -634,7 +602,7 @@ PrefabInstance:
     - target: {fileID: 2680559804865493855, guid: f75a0da6f27aac247b82c438eda791aa,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2680559804865493855, guid: f75a0da6f27aac247b82c438eda791aa,
         type: 3}
@@ -698,7 +666,7 @@ PrefabInstance:
     - target: {fileID: 7397448258497978693, guid: 46fca8ec1cd358745996a238164a73c6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7397448258497978693, guid: 46fca8ec1cd358745996a238164a73c6,
         type: 3}
@@ -831,7 +799,7 @@ PrefabInstance:
     - target: {fileID: 8234442344733850800, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8234442344733850800, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
         type: 3}

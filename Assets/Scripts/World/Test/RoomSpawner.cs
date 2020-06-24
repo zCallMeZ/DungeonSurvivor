@@ -4,6 +4,8 @@ using Random = UnityEngine.Random;
 using System.Collections;
 using System.Security.Cryptography;
 
+//TODO Mettre des commentaires + Enlever les using non utilisés + Attention nombres magiques
+
 public class RoomSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject zombieClassic;
@@ -42,16 +44,12 @@ public class RoomSpawner : MonoBehaviour
         LEFT,
         RIGHT
     }
-    void Start()
+    private void Start()
     {
         roomIndex++;
-//        if ((int) openingDirection == 3)
-//        {
-//            
-//        }
     }
 
-    void Update()
+    private void Update()
     {
         if (canSpawn)
         {
@@ -61,7 +59,7 @@ public class RoomSpawner : MonoBehaviour
         }
     }
 
-    void SpawningRoom()
+    private void SpawningRoom()
     {
         switch (openingDirection)
         {
@@ -202,7 +200,7 @@ public class RoomSpawner : MonoBehaviour
         }
     }
 
-    void SpawnEnnemy()
+    private void SpawnEnnemy()
     {
         int rand = Random.Range(0, 3);
         if (rand == 0)
@@ -215,13 +213,13 @@ public class RoomSpawner : MonoBehaviour
         }
     }
 
-    void SpawnHealthObject()
+    private void SpawnHealthObject()
     {
         RandomHealthSpawnPoint();
         Instantiate(health, healthSpawnSelected.transform.position, Quaternion.identity);
     }
 
-    void RandomHealthSpawnPoint()
+    private void RandomHealthSpawnPoint()
     {
         int rand = Random.Range(0, 3);
         if (rand == 0)
@@ -242,7 +240,7 @@ public class RoomSpawner : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("ground"))
         {

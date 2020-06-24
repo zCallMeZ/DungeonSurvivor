@@ -1,18 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float curHealth = 100;
-    private float takeHealth = 10;
-    [SerializeField] private float takeDmg = 5;
+    public float curHealth = 100.0f;
+    private float takeHealth = 10.0f;
+
+    [SerializeField] private float takeDmg = 5.0f;
 
     [SerializeField] private TextMeshProUGUI healthText;
     [SerializeField] private Transform respawn;
 
-    void Update()
+    private void Update()
     {
         healthText.text = curHealth.ToString("F0");
 
@@ -22,18 +21,18 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    void TakeDmg()
+    private void TakeDmg()
     {
         curHealth -= takeDmg;
     }
 
-    void TakeHealth()
+    private void TakeHealth()
     {
         curHealth -= takeHealth;
     }
 
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Zombie1"))
         {

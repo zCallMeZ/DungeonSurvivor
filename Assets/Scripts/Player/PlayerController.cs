@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 movement;
     private Vector2 mousePos;
 
-    [SerializeField] private float speed = 5f; 
+    [SerializeField] private float speed = 5.0f; 
 
     private void Start()
     {

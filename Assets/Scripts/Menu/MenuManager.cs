@@ -13,6 +13,10 @@ public class MenuManager : MonoBehaviour
     private const int activatePanel = 0;
     private const int desactivatePanel = 1;
 
+    private void Start()
+    {
+        playerHealth = FindObjectOfType<PlayerHealth>();
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -31,6 +35,7 @@ public class MenuManager : MonoBehaviour
 
         if (playerDeath <= 0.0f)
         {
+            Debug.Log("Active le panel GameOver");
             panelGameOver.gameObject.SetActive(true);
             Time.timeScale = 0;
         }

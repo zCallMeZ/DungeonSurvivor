@@ -417,7 +417,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: GameScene
+          m_StringArgument: TestGenProc
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &215268844
@@ -578,6 +578,8 @@ MonoBehaviour:
   panelMenu: {fileID: 406439986}
   panelCredits: {fileID: 1112559840}
   panelPause: {fileID: 0}
+  panelGameOver: {fileID: 0}
+  playerHealth: {fileID: 0}
 --- !u!1 &651373421
 GameObject:
   m_ObjectHideFlags: 0

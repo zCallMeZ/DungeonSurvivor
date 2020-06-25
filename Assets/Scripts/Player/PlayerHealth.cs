@@ -3,9 +3,11 @@ using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float curHealth = 100.0f;
+    private bool canTakePotion = false;
     private float takeHealth = 10.0f;
-
+    private float maxHealth = 100.0f;
+    
+    [SerializeField] private float curHealth = 100.0f;
     [SerializeField] private float takeDmg = 5.0f;
 
     [SerializeField] private TextMeshProUGUI healthText;
@@ -18,6 +20,15 @@ public class PlayerHealth : MonoBehaviour
         if (curHealth <= 0)
         {
             curHealth = 0f;
+        }
+
+        if (curHealth >= maxHealth)
+        {
+            canTakePotion = false;
+        }
+        else
+        {
+            canTakePotion = true;
         }
     }
 
@@ -46,11 +57,7 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDmg();
         }
-        if (collision.gameObject.CompareTag("Zombie4"))
-        {
-            TakeDmg();
-        }
-        if (collision.gameObject.CompareTag("health"))
+        if (collision.gameObject.CompareTag("health") && canTakePotion)
         {
             TakeHealth();
         }

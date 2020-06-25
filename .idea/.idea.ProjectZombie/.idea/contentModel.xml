@@ -25,6 +25,7 @@
             <e p="PlayerHealth.cs" t="Include" />
             <e p="Shoot.cs" t="Include" />
           </e>
+          <e p="Potion.cs" t="Include" />
           <e p="World" t="Include">
             <e p="Astar" t="Include">
               <e p="Grid.cs" t="Include" />

@@ -35,7 +35,6 @@ public class MenuManager : MonoBehaviour
 
         if (playerDeath <= 0.0f)
         {
-            Debug.Log("Active le panel GameOver");
             panelGameOver.gameObject.SetActive(true);
             Time.timeScale = 0;
         }
@@ -75,6 +74,11 @@ public class MenuManager : MonoBehaviour
     {
         panelMenu.gameObject.SetActive(false);
         Time.timeScale = desactivatePanel;
+    }
+
+    public void ActivatePanelWin()
+    {
+        
     }
 
     public void LoadScene(string sceneName)

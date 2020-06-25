@@ -1,38 +1,22 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CheckWin : MonoBehaviour
 {
-    private bool isOpen = false;
-    private bool canWin = false;
+    [SerializeField] private bool isWin = false;
 
-    [SerializeField] private GameObject panelWin;
-
-    private void Update()
-    {
-        if (canWin)
-        {
-            panelWin.SetActive(true);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("chest"))
         {
-            isOpen = true;
+            isWin = true;
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    public bool GetIsWin()
     {
-        if(isOpen)
-        {
-            if (collision.gameObject.CompareTag("chest")) 
-            {
-                canWin = true;
-            }
-        }
+        return isWin;
     }
 }

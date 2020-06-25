@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,11 +9,13 @@ public class PlayerController : MonoBehaviour
     private Vector2 movement;
     private Vector2 mousePos;
 
-    [SerializeField] private float speed = 5.0f; 
+    [SerializeField] private float speed = 5.0f;
+    private Vector3 initialPosition;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        initialPosition = transform.position;
     }
     private void Update()
     {
@@ -29,5 +32,13 @@ public class PlayerController : MonoBehaviour
         Vector2 lookDir = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg; 
         rb.rotation = angle; 
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Zombie3"))
+        {
+            transform.position = initialPosition;
+        }
     }
 }

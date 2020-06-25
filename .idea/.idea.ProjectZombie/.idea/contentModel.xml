@@ -25,18 +25,16 @@
             <e p="PlayerHealth.cs" t="Include" />
             <e p="Shoot.cs" t="Include" />
           </e>
-          <e p="RoomType.cs" t="Include" />
-          <e p="SpawnRoom.cs" t="Include" />
           <e p="World" t="Include">
             <e p="Astar" t="Include">
               <e p="Grid.cs" t="Include" />
               <e p="Node.cs" t="Include" />
               <e p="Pathfinding.cs" t="Include" />
             </e>
-            <e p="Astar.cs" t="Include" />
-            <e p="LevelGeneration.cs" t="Include" />
-            <e p="Test" t="Include">
-              <e p="RoomSpawner.cs" t="Include" />
+            <e p="LevelGeneration" t="Include">
+              <e p="LevelGeneration.cs" t="Include" />
+              <e p="RoomType.cs" t="Include" />
+              <e p="SpawnRoom.cs" t="Include" />
             </e>
           </e>
         </e>

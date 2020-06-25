@@ -45,7 +45,6 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.CompareTag("Zombie3"))
         {
             TakeDmg();
-            transform.position = respawn.transform.position;
         }
         if (collision.gameObject.CompareTag("Zombie4"))
         {

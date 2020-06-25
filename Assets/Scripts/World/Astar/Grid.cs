@@ -69,7 +69,7 @@ public class Grid : MonoBehaviour
 		return neighbours;
 	}
 
-	public Node NodeFromWorldPoint(Vector3 worldPosition)
+	public Node NodeFromWorldPoint(Vector2 worldPosition)
 	{
 		float percentX = (worldPosition.x + 10.0f ) / gridWorldSize.x;
 		float percentY = (worldPosition.y + 20.0f ) / gridWorldSize.y;

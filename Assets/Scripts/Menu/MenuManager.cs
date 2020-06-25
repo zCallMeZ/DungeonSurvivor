@@ -7,8 +7,11 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject panelCredits;
     [SerializeField] private GameObject panelPause;
 
+    [SerializeField] private GameObject panelWin;
     [SerializeField] private GameObject panelGameOver;
+
     [SerializeField] private PlayerHealth playerHealth;
+    [SerializeField] private CheckWin checkWin;
 
     private const int activatePanel = 0;
     private const int desactivatePanel = 1;
@@ -16,10 +19,11 @@ public class MenuManager : MonoBehaviour
     private void Start()
     {
         playerHealth = FindObjectOfType<PlayerHealth>();
+        checkWin = FindObjectOfType<CheckWin>();
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             if (panelPause.activeSelf)
             {
@@ -36,6 +40,14 @@ public class MenuManager : MonoBehaviour
         if (playerDeath <= 0.0f)
         {
             panelGameOver.gameObject.SetActive(true);
+            Time.timeScale = 0;
+        }
+
+        bool isWin = checkWin.GetIsWin();
+
+        if (isWin)
+        {
+            panelWin.gameObject.SetActive(true);
             Time.timeScale = 0;
         }
     }
@@ -78,7 +90,14 @@ public class MenuManager : MonoBehaviour
 
     public void ActivatePanelWin()
     {
-        
+        panelWin.gameObject.SetActive(true);
+        Time.timeScale = activatePanel;
+    }
+
+    public void DesactivatePanelWin()
+    {
+        panelWin.gameObject.SetActive(false);
+        Time.timeScale = desactivatePanel;
     }
 
     public void LoadScene(string sceneName)

@@ -26,7 +26,7 @@ public class PlayerHealth : MonoBehaviour
         {
             canTakePotion = false;
         }
-        else
+        if(curHealth< maxHealth)
         {
             canTakePotion = true;
         }
@@ -57,8 +57,9 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDmg();
         }
-        if (collision.gameObject.CompareTag("health") && canTakePotion)
+        if (collision.gameObject.CompareTag("health"))
         {
+            Debug.Log("TakePotion");
             TakeHealth();
         }
     }

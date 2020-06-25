@@ -7,7 +7,7 @@ public class CheckWin : MonoBehaviour
 {
     [SerializeField] private bool isWin = false;
 
-    private void OnCollisionEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("chest"))
         {

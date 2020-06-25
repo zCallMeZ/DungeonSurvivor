@@ -31,21 +31,12 @@ public class LevelGeneration : MonoBehaviour
    [SerializeField] private float minX;
    [SerializeField] private float maxX;
    [SerializeField] private float minY;
-   public bool stopLevelGeneration = false;
+   [SerializeField] private bool stopLevelGeneration = false;
    private bool canSpawn = true;
-
-   [SerializeField] private RoomIndex roomIndex;
+   
    [SerializeField] private LayerMask room;
 
    private int downCounter;
-
-   enum RoomIndex : short
-   {
-      LR = 0,
-      LRB,
-      LRT,
-      LRBT
-   }
 
    private void Start()
    {
@@ -191,5 +182,10 @@ public class LevelGeneration : MonoBehaviour
       {
          canSpawn = false;
       }
+   }
+
+   public bool GetStopLevelGeneration()
+   {
+      return stopLevelGeneration;
    }
 }

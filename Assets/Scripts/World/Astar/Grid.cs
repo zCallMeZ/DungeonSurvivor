@@ -26,7 +26,7 @@ public class Grid : MonoBehaviour
 
     private IEnumerator Delay()
     {
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(4.0f);
         CreateGrid();
     }
 

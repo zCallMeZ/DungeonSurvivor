@@ -8,11 +8,19 @@ public class SpawnRoom : MonoBehaviour
     [SerializeField] private GameObject room;
     [SerializeField] private LayerMask whatIsRoom;
 
-    public LevelGeneration levelGeneration;
+    private LevelGeneration levelGeneration;
+
+    private void Start()
+    {
+        levelGeneration = FindObjectOfType<LevelGeneration>();
+    }
+
     private void Update()
     {
         Collider2D roomDetection = Physics2D.OverlapCircle(transform.position, 1, whatIsRoom);
-        if (roomDetection == null && levelGeneration.stopLevelGeneration == true)
+        bool stopLevelGeneration = levelGeneration.GetStopLevelGeneration();
+        
+        if (roomDetection == null && stopLevelGeneration == true)
         {
             Instantiate(room, transform.position, Quaternion.identity);
             Destroy(gameObject);

@@ -38,7 +38,11 @@ public class PlayerHealth : MonoBehaviour
 
     private void TakeHealth()
     {
-        curHealth += takeHealth;
+        if(curHealth < maxHealth)
+        {
+            curHealth += takeHealth;
+        }
+        
     }
 
 

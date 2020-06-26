@@ -7,29 +7,28 @@ public class Potion : MonoBehaviour
 {
     private PlayerHealth playerHealth;
     private bool destroyPotion = false;
+    private float currHealth;
 
     private float maxHealth = 100.0f;
-    //private void Start()
-    //{
-    //    playerHealth = FindObjectOfType<PlayerHealth>();
-    //}
-
-    //private void Update()
-    //{
-    //    float curHealth = playerHealth.GetPlayerLife();
-
-    //    if (curHealth < maxHealth && destroyPotion == true)
-    //    {
-    //        Destroy(gameObject);
-    //    }
-    //}
-
-    private void OnCollisionEnter2D(Collision2D other)
+    private void Start()
     {
-        if (other.gameObject.CompareTag("player"))
+        playerHealth = FindObjectOfType<PlayerHealth>();
+    }
+
+    private void Update()
+    {
+        currHealth = playerHealth.GetPlayerLife();
+        if(destroyPotion)
         {
-            Debug.Log("DestroyPotion");
             Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("player") && currHealth < maxHealth)
+        {
+            destroyPotion = true;
         }
     }
 }

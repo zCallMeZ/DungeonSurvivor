@@ -14,6 +14,7 @@ public class ZombieController : MonoBehaviour
     private Animator animator;
     private Pathfinding pathfinding;
     [SerializeField] private AudioSource deadSound;
+    [SerializeField] private AudioSource attackSound;
 
 
     private Vector2 movement;
@@ -65,6 +66,7 @@ public class ZombieController : MonoBehaviour
             case State.FOLLOW:
 
                 {
+                    attackSound.Play();
                     List<Node> path = pathfinding.FindPath(transform.position, player.position);
                     if (path != null)
                     {

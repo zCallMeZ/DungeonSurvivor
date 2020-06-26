@@ -4557,41 +4557,89 @@ PrefabInstance:
       propertyPath: levelGeneration
       value: 
       objectReference: {fileID: 2135895394}
+    - target: {fileID: 8234442343647058889, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
+        type: 3}
+      propertyPath: zombieClassic
+      value: 
+      objectReference: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
+        type: 3}
     - target: {fileID: 8234442343760769070, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
+        type: 3}
+      propertyPath: levelGeneration
+      value: 
+      objectReference: {fileID: 2135895394}
+    - target: {fileID: 8234442343760769070, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
+        type: 3}
+      propertyPath: zombieClassic
+      value: 
+      objectReference: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
+        type: 3}
+    - target: {fileID: 8234442343779165275, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
         type: 3}
       propertyPath: levelGeneration
       value: 
       objectReference: {fileID: 2135895394}
     - target: {fileID: 8234442343779165275, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
         type: 3}
+      propertyPath: zombieClassic
+      value: 
+      objectReference: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
+        type: 3}
+    - target: {fileID: 8234442343865893564, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
+        type: 3}
       propertyPath: levelGeneration
       value: 
       objectReference: {fileID: 2135895394}
     - target: {fileID: 8234442343865893564, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
+        type: 3}
+      propertyPath: zombieClassic
+      value: 
+      objectReference: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
+        type: 3}
+    - target: {fileID: 8234442343912648217, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
         type: 3}
       propertyPath: levelGeneration
       value: 
       objectReference: {fileID: 2135895394}
     - target: {fileID: 8234442343912648217, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
         type: 3}
+      propertyPath: zombieClassic
+      value: 
+      objectReference: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
+        type: 3}
+    - target: {fileID: 8234442343919201705, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
+        type: 3}
       propertyPath: levelGeneration
       value: 
       objectReference: {fileID: 2135895394}
     - target: {fileID: 8234442343919201705, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
+        type: 3}
+      propertyPath: zombieClassic
+      value: 
+      objectReference: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
+        type: 3}
+    - target: {fileID: 8234442344027041096, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
         type: 3}
       propertyPath: levelGeneration
       value: 
       objectReference: {fileID: 2135895394}
     - target: {fileID: 8234442344027041096, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
         type: 3}
-      propertyPath: levelGeneration
+      propertyPath: zombieClassic
       value: 
-      objectReference: {fileID: 2135895394}
+      objectReference: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
+        type: 3}
     - target: {fileID: 8234442344617791364, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
         type: 3}
       propertyPath: levelGeneration
       value: 
       objectReference: {fileID: 2135895394}
+    - target: {fileID: 8234442344617791364, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
+        type: 3}
+      propertyPath: zombieClassic
+      value: 
+      objectReference: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
+        type: 3}
     - target: {fileID: 8234442344733850800, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4657,40 +4705,88 @@ PrefabInstance:
       propertyPath: levelGeneration
       value: 
       objectReference: {fileID: 2135895394}
+    - target: {fileID: 8234442344765999358, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
+        type: 3}
+      propertyPath: zombieClassic
+      value: 
+      objectReference: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
+        type: 3}
     - target: {fileID: 8234442344821895057, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
+        type: 3}
+      propertyPath: levelGeneration
+      value: 
+      objectReference: {fileID: 2135895394}
+    - target: {fileID: 8234442344821895057, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
+        type: 3}
+      propertyPath: zombieClassic
+      value: 
+      objectReference: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
+        type: 3}
+    - target: {fileID: 8234442345009630901, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
         type: 3}
       propertyPath: levelGeneration
       value: 
       objectReference: {fileID: 2135895394}
     - target: {fileID: 8234442345009630901, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
         type: 3}
+      propertyPath: zombieClassic
+      value: 
+      objectReference: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
+        type: 3}
+    - target: {fileID: 8234442345093532279, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
+        type: 3}
       propertyPath: levelGeneration
       value: 
       objectReference: {fileID: 2135895394}
     - target: {fileID: 8234442345093532279, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
+        type: 3}
+      propertyPath: zombieClassic
+      value: 
+      objectReference: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
+        type: 3}
+    - target: {fileID: 8234442345231385639, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
         type: 3}
       propertyPath: levelGeneration
       value: 
       objectReference: {fileID: 2135895394}
     - target: {fileID: 8234442345231385639, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
         type: 3}
+      propertyPath: zombieClassic
+      value: 
+      objectReference: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
+        type: 3}
+    - target: {fileID: 8234442345262018195, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
+        type: 3}
       propertyPath: levelGeneration
       value: 
       objectReference: {fileID: 2135895394}
     - target: {fileID: 8234442345262018195, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
+        type: 3}
+      propertyPath: zombieClassic
+      value: 
+      objectReference: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
+        type: 3}
+    - target: {fileID: 8234442345324647907, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
         type: 3}
       propertyPath: levelGeneration
       value: 
       objectReference: {fileID: 2135895394}
     - target: {fileID: 8234442345324647907, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
         type: 3}
-      propertyPath: levelGeneration
+      propertyPath: zombieClassic
       value: 
-      objectReference: {fileID: 2135895394}
+      objectReference: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
+        type: 3}
     - target: {fileID: 8234442345414723364, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
         type: 3}
       propertyPath: levelGeneration
       value: 
       objectReference: {fileID: 2135895394}
+    - target: {fileID: 8234442345414723364, guid: bfdb70dc3c0e1ff499bc4c71fae5827f,
+        type: 3}
+      propertyPath: zombieClassic
+      value: 
+      objectReference: {fileID: 3308571316649898203, guid: 0aeda856c09efac4983d717a70a64678,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfdb70dc3c0e1ff499bc4c71fae5827f, type: 3}

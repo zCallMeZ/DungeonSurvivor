@@ -7,6 +7,7 @@ public class SpawnRoom : MonoBehaviour
 {
     [SerializeField] private GameObject room;
     [SerializeField] private LayerMask whatIsRoom;
+    [SerializeField] private GameObject zombieClassic;
 
     private LevelGeneration levelGeneration;
 
@@ -23,6 +24,7 @@ public class SpawnRoom : MonoBehaviour
         if (roomDetection == null && stopLevelGeneration == true)
         {
             Instantiate(room, transform.position, Quaternion.identity);
+            Instantiate(zombieClassic, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

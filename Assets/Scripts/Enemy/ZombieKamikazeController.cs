@@ -8,6 +8,7 @@ public class ZombieKamikazeController : MonoBehaviour
 {
     [SerializeField] private float speed = 4.0f;
     [SerializeField] private AudioSource deadSound;
+    [SerializeField] private AudioSource followSound;
 
     private Transform player;
     private ZombieHealth zombieHealth;
@@ -65,6 +66,7 @@ public class ZombieKamikazeController : MonoBehaviour
             case State.FOLLOW:
 
                 {
+                    followSound.Play();
                     List<Node> path = pathfinding.FindPath(transform.position, player.position);
                     if (path != null)
                     {

@@ -77,7 +77,7 @@ public class ZombieController : MonoBehaviour
                     if (!isFollowingPlayer)
                     {
                         rb.velocity = Vector2.zero;
-                        state = State.IDLE;
+                        state = State.RETURN_INITIALPOSITION;
                     }
 
                     if (isAttack)
@@ -91,12 +91,25 @@ public class ZombieController : MonoBehaviour
             case State.RETURN_INITIALPOSITION:
 
                 {
+                    colorZombieState.color = Color.green;
+
                     List<Node> path = pathfinding.FindPath(transform.position, initialPosition);
                     if (path != null)
                     {
                         target = path[0].worldPos;
                         MoveCharacter();
                     }
+
+                    if(transform.position == initialPosition)
+                    {
+                        state = State.IDLE;
+                    }
+
+                    if (isFollowingPlayer)
+                    {
+                        state = State.FOLLOW;
+                    }
+
                 }
 
                 break;

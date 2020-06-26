@@ -11,7 +11,6 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float takeDmg = 5.0f;
 
     [SerializeField] private TextMeshProUGUI healthText;
-    [SerializeField] private Transform respawn;
 
     private void Update()
     {
@@ -39,7 +38,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void TakeHealth()
     {
-        curHealth -= takeHealth;
+        curHealth += takeHealth;
     }
 
 

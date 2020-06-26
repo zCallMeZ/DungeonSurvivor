@@ -55,6 +55,7 @@ public class LevelGeneration : MonoBehaviour
       if (timeBtwRoom <= 0 && stopLevelGeneration == false)
       {
          Move();
+         SpawnEnnemy();
          timeBtwRoom = startTimeBtwRoom;
       }
       else

@@ -82,15 +82,7 @@ public class ZombieKamikazeController : MonoBehaviour
                         state = State.ATTACK;
                     }
 
-                    if(transform.position == initialPosition)
-                    {
-                        state = State.IDLE;
-                    }
-
-                    if (isFollowingPlayer)
-                    {
-                        state = State.FOLLOW;
-                    }
+             
                 }
 
                 break;
@@ -103,6 +95,16 @@ public class ZombieKamikazeController : MonoBehaviour
                     {
                         target = path[0].worldPos;
                         MoveCharacter();
+                    }
+
+                    if (transform.position == initialPosition)
+                    {
+                        state = State.IDLE;
+                    }
+
+                    if (isFollowingPlayer)
+                    {
+                        state = State.FOLLOW;
                     }
                 }
 

@@ -21,6 +21,7 @@ TagManager:
   - chest
   - clock
   - health
+  - chest1
   layers:
   - Default
   - TransparentFX

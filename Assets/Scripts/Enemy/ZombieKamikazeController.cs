@@ -81,8 +81,6 @@ public class ZombieKamikazeController : MonoBehaviour
                     {
                         state = State.ATTACK;
                     }
-
-             
                 }
 
                 break;

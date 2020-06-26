@@ -54,8 +54,6 @@ public class ZombieController : MonoBehaviour
         {
             case State.IDLE:
 
-                colorZombieState.color = Color.white;
-
                 if (isFollowingPlayer)
                 {
                     state = State.FOLLOW;
@@ -65,8 +63,6 @@ public class ZombieController : MonoBehaviour
             case State.FOLLOW:
 
                 {
-                    colorZombieState.color = Color.red;
-
                     List<Node> path = pathfinding.FindPath(transform.position, player.position);
                     if (path != null)
                     {
@@ -91,8 +87,6 @@ public class ZombieController : MonoBehaviour
             case State.RETURN_INITIALPOSITION:
 
                 {
-                    colorZombieState.color = Color.green;
-
                     List<Node> path = pathfinding.FindPath(transform.position, initialPosition);
                     if (path != null)
                     {
@@ -115,8 +109,6 @@ public class ZombieController : MonoBehaviour
                 break;
 
             case State.ATTACK:
-
-                colorZombieState.color = Color.blue;
 
                 MoveCharacter();
 

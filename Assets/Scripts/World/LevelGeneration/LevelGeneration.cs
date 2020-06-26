@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
+﻿using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -32,7 +29,6 @@ public class LevelGeneration : MonoBehaviour
    [SerializeField] private float maxX;
    [SerializeField] private float minY;
    [SerializeField] private bool stopLevelGeneration = false;
-   private bool canSpawn = true;
    
    [SerializeField] private LayerMask room;
 

@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using UnityEngine;
+﻿using UnityEngine;
 
 //TODO Mettre des commentaires + Enlever les using non utilisés + Ranger le code
 
@@ -11,6 +8,8 @@ public class ZombieTankController : MonoBehaviour
     [SerializeField] private Transform point2;
     [SerializeField] private Transform point3;
     [SerializeField] private Transform point4;
+    
+    [SerializeField] private float speed = 3.0f;
 
     private bool followPoint1 = true;
     private bool followPoint2 = false;
@@ -19,7 +18,6 @@ public class ZombieTankController : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 movement;
-    [SerializeField] private float speed = 3.0f;
     private Vector3 direction;
 
     void Start()

@@ -2,7 +2,6 @@
 
 public class Shoot : MonoBehaviour
 {
-    [SerializeField] private float speed = 1.0f;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private AudioSource bulletSound;

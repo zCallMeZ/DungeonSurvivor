@@ -8,7 +8,6 @@ public class ZombieController : MonoBehaviour
     [SerializeField] private float speed = 3.0f;
 
     private Transform player;
-    private SpriteRenderer colorZombieState;
     private ZombieHealth zombieHealth;
     private Rigidbody2D rb;
     private Animator animator;
@@ -38,7 +37,6 @@ public class ZombieController : MonoBehaviour
 
     private void Start()
     {
-        colorZombieState = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         initialPosition = transform.position;

@@ -10,6 +10,7 @@
         <e p="Scripts" t="Include">
           <e p="CheckWin.cs" t="Include" />
           <e p="Enemy" t="Include">
+            <e p="Potion.cs" t="Include" />
             <e p="ZombieController.cs" t="Include" />
             <e p="ZombieHealth.cs" t="Include" />
             <e p="ZombieKamikazeController.cs" t="Include" />
@@ -25,7 +26,6 @@
             <e p="PlayerHealth.cs" t="Include" />
             <e p="Shoot.cs" t="Include" />
           </e>
-          <e p="Potion.cs" t="Include" />
           <e p="World" t="Include">
             <e p="Astar" t="Include">
               <e p="Grid.cs" t="Include" />

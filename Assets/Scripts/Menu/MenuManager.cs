@@ -6,6 +6,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject panelMenu;
     [SerializeField] private GameObject panelCredits;
     [SerializeField] private GameObject panelPause;
+    [SerializeField] private GameObject panelControls;
 
     [SerializeField] private GameObject panelWin;
     [SerializeField] private GameObject panelGameOver;
@@ -104,6 +105,18 @@ public class MenuManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void ActivatePanelControls()
+    {
+        panelControls.gameObject.SetActive(true);
+        Time.timeScale = activatePanel;
+    }
+
+    public void DesactivatePanelControls()
+    {
+        panelControls.gameObject.SetActive(false);
+        Time.timeScale = desactivatePanel;
     }
 
     public void Quit()

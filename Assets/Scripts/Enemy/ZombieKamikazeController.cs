@@ -74,12 +74,22 @@ public class ZombieKamikazeController : MonoBehaviour
                     if (!isFollowingPlayer)
                     {
                         rb.velocity = Vector2.zero;
-                        state = State.IDLE;
+                        state = State.RETURN_INITIALPOSITION;
                     }
 
                     if (isAttack)
                     {
                         state = State.ATTACK;
+                    }
+
+                    if(transform.position == initialPosition)
+                    {
+                        state = State.IDLE;
+                    }
+
+                    if (isFollowingPlayer)
+                    {
+                        state = State.FOLLOW;
                     }
                 }
 

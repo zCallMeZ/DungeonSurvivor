@@ -13,6 +13,8 @@ public class ZombieController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     private Pathfinding pathfinding;
+    [SerializeField] private AudioSource deadSound;
+
 
     private Vector2 movement;
 
@@ -125,6 +127,7 @@ public class ZombieController : MonoBehaviour
 
             case State.DEAD:
 
+                deadSound.Play();
                 animator.SetBool("isDead", true);
                 Destroy(this);
                 Destroy(gameObject, 1.0f);

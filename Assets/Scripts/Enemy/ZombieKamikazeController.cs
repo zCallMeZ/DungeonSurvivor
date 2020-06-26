@@ -7,6 +7,7 @@ using UnityEngine;
 public class ZombieKamikazeController : MonoBehaviour
 {
     [SerializeField] private float speed = 4.0f;
+    [SerializeField] private AudioSource deadSound;
 
     private Transform player;
     private ZombieHealth zombieHealth;
@@ -121,8 +122,8 @@ public class ZombieKamikazeController : MonoBehaviour
 
             case State.DEAD:
 
+                deadSound.Play();
                 animator.SetBool("isDead", true);
-
                 Destroy(this);
                 Destroy(gameObject, 1.0f);
 

@@ -29,6 +29,8 @@ public class LevelGeneration : MonoBehaviour
    [SerializeField] private float maxX;
    [SerializeField] private float minY;
    [SerializeField] private bool stopLevelGeneration = false;
+
+    private bool canSpawn = true;
    
    [SerializeField] private LayerMask room;
 
